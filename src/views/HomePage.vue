@@ -47,7 +47,47 @@ import { QIcon } from '../components/q'
             class="flex items-center gap-2 rounded-md px-2 py-1.5 text-primary transition-colors duration-150 hover:bg-hover"
           >
             <QIcon name="layout" size="sm" class="text-accent-1" />
-            <span>全部组件示例</span>
+            <span>组件示例索引</span>
+            <QIcon name="chevron-right" size="sm" class="ml-auto text-primary/40" />
+          </RouterLink>
+        </li>
+        <li>
+          <RouterLink
+            to="/example/components/core"
+            class="flex items-center gap-2 rounded-md px-2 py-1.5 text-primary transition-colors duration-150 hover:bg-hover"
+          >
+            <QIcon name="layout" size="sm" class="text-accent-1" />
+            <span>基础与反馈</span>
+            <QIcon name="chevron-right" size="sm" class="ml-auto text-primary/40" />
+          </RouterLink>
+        </li>
+        <li>
+          <RouterLink
+            to="/example/components/forms"
+            class="flex items-center gap-2 rounded-md px-2 py-1.5 text-primary transition-colors duration-150 hover:bg-hover"
+          >
+            <QIcon name="edit" size="sm" class="text-accent-1" />
+            <span>表单</span>
+            <QIcon name="chevron-right" size="sm" class="ml-auto text-primary/40" />
+          </RouterLink>
+        </li>
+        <li>
+          <RouterLink
+            to="/example/components/blocks"
+            class="flex items-center gap-2 rounded-md px-2 py-1.5 text-primary transition-colors duration-150 hover:bg-hover"
+          >
+            <QIcon name="file-text" size="sm" class="text-accent-1" />
+            <span>文档块</span>
+            <QIcon name="chevron-right" size="sm" class="ml-auto text-primary/40" />
+          </RouterLink>
+        </li>
+        <li>
+          <RouterLink
+            to="/example/components/board"
+            class="flex items-center gap-2 rounded-md px-2 py-1.5 text-primary transition-colors duration-150 hover:bg-hover"
+          >
+            <QIcon name="table" size="sm" class="text-accent-1" />
+            <span>看板</span>
             <QIcon name="chevron-right" size="sm" class="ml-auto text-primary/40" />
           </RouterLink>
         </li>
