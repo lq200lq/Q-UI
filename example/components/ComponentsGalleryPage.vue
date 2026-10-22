@@ -44,6 +44,8 @@ import {
   QBlock,
   QEditableTitle,
   QInlineEditable,
+  QSlashMenu,
+  type QSlashMenuItem,
   QIcon,
   QIconButton,
   QInput,
@@ -153,6 +155,26 @@ const volume = ref(42)
 const tagColor = ref<string | null>('#2383e2')
 const pageTitle = ref('产品规格')
 const cellStatus = ref('进行中')
+const slashOpen = ref(false)
+const slashQuery = ref('')
+const slashItems: QSlashMenuItem[] = [
+  { key: 'text', label: '文本', description: '普通段落', icon: 'file-text', keywords: ['text'] },
+  { key: 'heading', label: '标题', description: '大标题', icon: 'heading', keywords: ['h1'] },
+  { key: 'todo', label: '待办', description: '勾选列表', icon: 'check', keywords: ['todo'] },
+  { key: 'code', label: '代码', description: '代码块', icon: 'code', keywords: ['code'] },
+]
+const slashAnchor = ref<HTMLElement | null>(null)
+const slashMenuRef = ref<{ positionNear: (el: HTMLElement | null) => void } | null>(null)
+
+function openSlashDemo() {
+  slashQuery.value = ''
+  slashOpen.value = true
+  void slashMenuRef.value?.positionNear(slashAnchor.value)
+}
+
+function onSlashSelect(item: QSlashMenuItem) {
+  toast(`插入「${item.label}」`)
+}
 const mentionText = ref('请 @')
 const mentionOptions: QMentionOption[] = [
   { id: 'ada', label: 'Ada Lovelace', description: '工程' },
@@ -291,6 +313,7 @@ const navItems = [
   { id: 'q-block', label: 'QBlock' },
   { id: 'q-editable-title', label: 'QEditableTitle' },
   { id: 'q-inline-editable', label: 'QInlineEditable' },
+  { id: 'q-slash-menu', label: 'QSlashMenu' },
   { id: 'q-textarea', label: 'QTextarea' },
   { id: 'q-select', label: 'QSelect' },
   { id: 'q-combobox', label: 'QCombobox' },
@@ -929,6 +952,35 @@ onUnmounted(() => {
       <div class="flex items-center gap-3 text-sm text-primary/70">
         <span>状态</span>
         <QInlineEditable v-model="cellStatus" empty-label="设置状态" />
+      </div>
+    </ExampleBlock>
+
+    <ExampleBlock
+      id="q-slash-menu"
+      title="QSlashMenu"
+      description="/ 命令菜单；过滤与键盘选择"
+      :code="snippets.slashMenu"
+    >
+      <div class="space-y-3">
+        <div ref="slashAnchor" class="flex flex-wrap items-center gap-2">
+          <QButton size="sm" variant="outline" @click="openSlashDemo">
+            打开 / 菜单
+          </QButton>
+          <QInput
+            v-model="slashQuery"
+            size="sm"
+            placeholder="过滤命令…"
+            class="max-w-[160px]"
+            @focus="openSlashDemo"
+          />
+        </div>
+        <QSlashMenu
+          ref="slashMenuRef"
+          v-model:open="slashOpen"
+          :query="slashQuery"
+          :items="slashItems"
+          @select="onSlashSelect"
+        />
       </div>
     </ExampleBlock>
 

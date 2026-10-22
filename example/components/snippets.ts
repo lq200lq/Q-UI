@@ -146,6 +146,13 @@ export const editableTitle = `<QEditableTitle v-model="title" placeholder="无�
 
 export const inlineEditable = `<QInlineEditable v-model="status" empty-label="设置状态" />`
 
+export const slashMenu = `<QSlashMenu
+  v-model:open="slashOpen"
+  :query="slashQuery"
+  :items="slashItems"
+  @select="onSlash"
+/>`
+
 export const mentionInput = `<QMentionInput
   v-model="comment"
   :options="[

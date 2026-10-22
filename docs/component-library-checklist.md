@@ -106,7 +106,7 @@
 - [x] `QBlockHandle` — Drag Handle Illusion
 - [x] `QEditableTitle` — 页面标题就地编辑
 - [x] `QInlineEditable` — 单元格 / 属性就地编辑
-- [ ] `QSlashMenu` — `/` 命令菜单
+- [x] `QSlashMenu` — `/` 命令菜单
 - [ ] `QBlockToolbar` — 选区浮动工具条
 - [ ] `QCover` / `QPageIcon` — 封面与页面图标
 
