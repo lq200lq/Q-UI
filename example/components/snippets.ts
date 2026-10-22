@@ -125,6 +125,13 @@ export const timePicker = `<QField label="开始时间">
   <QTimePicker v-model="startTime" :minute-step="5" />
 </QField>`
 
+export const fileUpload = `<QFileUpload
+  v-model="files"
+  multiple
+  accept="image/*,.pdf"
+  @reject="toast"
+/>`
+
 export const form = `const { values, errors, submitting, handleSubmit } = useForm({
   initialValues: { name: '', email: '' },
   rules: {

@@ -85,7 +85,7 @@
 - [x] `QForm` — 与 `useForm` / `formRules` 的薄封装（自研校验）
 - [x] `QDatePicker` / `QDateRangePicker`
 - [x] `QTimePicker`
-- [ ] `QFileUpload` / `QDropzone`
+- [x] `QFileUpload` / `QDropzone`
 - [ ] `QSlider`
 - [ ] `QColorSwatch` / 轻量取色（主题/标签色）
 - [ ] `QMentionInput`（`@` 提及，文档产品 P1–P2）

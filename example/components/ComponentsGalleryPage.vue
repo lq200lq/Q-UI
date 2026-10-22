@@ -34,6 +34,8 @@ import {
   QDateRangePicker,
   type QDateRange,
   QTimePicker,
+  QFileUpload,
+  type QUploadFile,
   QIcon,
   QIconButton,
   QInput,
@@ -138,6 +140,7 @@ const onDemoFormSubmit = handleDemoForm(async (values) => {
 const dueDate = ref<string | null>('2026-10-22')
 const dateRange = ref<QDateRange>({ start: '2026-10-01', end: '2026-10-15' })
 const startTime = ref<string | null>('09:30')
+const uploadFiles = ref<QUploadFile[]>([])
 
 const page = ref(1)
 const step = ref('team')
@@ -261,6 +264,7 @@ const navItems = [
   { id: 'q-form', label: 'QForm' },
   { id: 'q-date-picker', label: 'QDatePicker' },
   { id: 'q-time-picker', label: 'QTimePicker' },
+  { id: 'q-file-upload', label: 'QFileUpload' },
   { id: 'q-textarea', label: 'QTextarea' },
   { id: 'q-select', label: 'QSelect' },
   { id: 'q-combobox', label: 'QCombobox' },
@@ -779,6 +783,23 @@ onUnmounted(() => {
         <p class="mt-2 text-xs text-primary/55">
           当前：{{ startTime ?? '空' }}
         </p>
+      </div>
+    </ExampleBlock>
+
+    <ExampleBlock
+      id="q-file-upload"
+      title="QFileUpload · QDropzone"
+      description="点击或拖拽上传；多文件列表；大小限制 reject"
+      :code="snippets.fileUpload"
+    >
+      <div class="w-full max-w-md">
+        <QFileUpload
+          v-model="uploadFiles"
+          multiple
+          accept="image/*,.pdf,.txt"
+          :max-size="5 * 1024 * 1024"
+          @reject="(reason) => toast({ title: reason, variant: 'warning' })"
+        />
       </div>
     </ExampleBlock>
 
