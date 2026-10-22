@@ -354,6 +354,11 @@ export const skeleton = `<div class="flex items-center gap-3">
 </div>
 <QSkeleton variant="rect" height="6rem" />`
 
+export const spinner = `<QSpinner />
+<QSpinner size="sm" />
+<QSpinner size="lg" label="同步中" />
+<QButton :loading="true">Saving</QButton>`
+
 export const badge = `<QBadge variant="success" dot>已发布</QBadge>
 <QBadge variant="warning">草稿</QBadge>
 <QBadge variant="info">审阅中</QBadge>

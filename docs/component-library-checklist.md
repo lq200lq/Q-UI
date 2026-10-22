@@ -38,7 +38,7 @@
 
 ### 反馈
 
-- [ ] `QSpinner` / `QSkeleton`
+- [x] `QSpinner` / `QSkeleton`
 - [x] `QBadge` / `QTag`
 - [x] `QAlert` / `QCallout` — info / success / warning / danger（Notion 风格 callout）
 - [x] `QTooltip`

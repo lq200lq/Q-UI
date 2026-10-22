@@ -44,6 +44,7 @@ import {
   QList,
   QListItem,
   QSkeleton,
+  QSpinner,
   QTable,
   QTableBody,
   QTableHead,
@@ -203,6 +204,7 @@ const navItems = [
   { id: 'q-badge', label: 'QBadge · QTag' },
   { id: 'q-empty', label: 'QEmpty' },
   { id: 'q-skeleton', label: 'QSkeleton' },
+  { id: 'q-spinner', label: 'QSpinner' },
   { id: 'q-icon', label: 'QIcon' },
 ] as const
 
@@ -1260,6 +1262,20 @@ onUnmounted(() => {
         </div>
         <QSkeleton variant="rect" height="5rem" />
       </div>
+    </ExampleBlock>
+
+    <ExampleBlock
+      id="q-spinner"
+      title="QSpinner"
+      description="sm / md / lg；role=status"
+      :code="snippets.spinner"
+    >
+      <QInline gap="md" align="center">
+        <QSpinner size="sm" />
+        <QSpinner />
+        <QSpinner size="lg" label="同步中" />
+        <QButton size="sm" loading>Saving</QButton>
+      </QInline>
     </ExampleBlock>
 
     <ExampleBlock
