@@ -66,7 +66,7 @@
 - [x] `QSidebar` + `QNavItem`（可折叠侧栏）
 - [x] `QAppShell` — 应用布局壳
 - [x] `QPagination`
-- [ ] `QStepper` / 步骤条（流程页）
+- [x] `QStepper` / 步骤条（流程页）
 
 ### 数据展示
 

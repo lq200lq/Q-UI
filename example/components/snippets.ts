@@ -324,6 +324,15 @@ export const contextMenu = `<QContextMenu
   </div>
 </QContextMenu>`
 
+export const stepper = `<QStepper
+  v-model="step"
+  :items="[
+    { value: 'basics', label: '基本信息', description: '名称与描述' },
+    { value: 'team', label: '团队', description: '成员与权限' },
+    { value: 'review', label: '确认', description: '检查并提交' },
+  ]"
+/>`
+
 export const tabs = `const tab = ref('overview')
 
 <QTabs

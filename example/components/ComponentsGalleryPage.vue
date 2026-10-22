@@ -23,6 +23,8 @@ import {
   QContextMenu,
   QPopover,
   QPagination,
+  QStepper,
+  type QStepperItem,
   QProgress,
   QProgressCircle,
   QField,
@@ -103,6 +105,12 @@ const drawerOpen = ref(false)
 const commandOpen = ref(false)
 const popoverOpen = ref(false)
 const page = ref(1)
+const step = ref('team')
+const stepperItems: QStepperItem[] = [
+  { value: 'basics', label: '基本信息', description: '名称与描述' },
+  { value: 'team', label: '团队', description: '成员与权限' },
+  { value: 'review', label: '确认', description: '检查并提交' },
+]
 const confirmOpen = ref(false)
 const alertVisible = ref(true)
 
@@ -213,6 +221,7 @@ const navItems = [
   { id: 'q-popover', label: 'QPopover' },
   { id: 'q-progress', label: 'QProgress' },
   { id: 'q-pagination', label: 'QPagination' },
+  { id: 'q-stepper', label: 'QStepper' },
   { id: 'q-tabs', label: 'QTabs' },
   { id: 'q-breadcrumb', label: 'QBreadcrumb' },
   { id: 'q-list', label: 'QList' },
@@ -1149,6 +1158,41 @@ onUnmounted(() => {
           size="md"
         />
         <p class="text-xs text-primary/55">当前页：{{ page }}</p>
+      </div>
+    </ExampleBlock>
+
+    <ExampleBlock
+      id="q-stepper"
+      title="QStepper"
+      description="水平 / 垂直；可回退已完成步骤；当前与完成态"
+      :code="snippets.stepper"
+    >
+      <div class="flex w-full max-w-2xl flex-col gap-8">
+        <QStepper v-model="step" :items="stepperItems" />
+        <QStepper
+          v-model="step"
+          :items="stepperItems"
+          orientation="vertical"
+          class="max-w-xs"
+        />
+        <div class="flex flex-wrap items-center gap-2">
+          <QButton
+            size="sm"
+            variant="secondary"
+            :disabled="step === 'basics'"
+            @click="step = step === 'review' ? 'team' : 'basics'"
+          >
+            上一步
+          </QButton>
+          <QButton
+            size="sm"
+            :disabled="step === 'review'"
+            @click="step = step === 'basics' ? 'team' : 'review'"
+          >
+            下一步
+          </QButton>
+          <span class="text-xs text-primary/55">当前：{{ step }}</span>
+        </div>
       </div>
     </ExampleBlock>
 
