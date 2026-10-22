@@ -11,6 +11,7 @@ import {
   QStack,
   QInline,
   QDivider,
+  QSpacer,
   QButton,
   QCallout,
   QCard,
@@ -169,6 +170,7 @@ const navItems = [
   { id: 'q-container', label: 'QContainer' },
   { id: 'q-stack-inline', label: 'QStack · QInline' },
   { id: 'q-divider', label: 'QDivider' },
+  { id: 'q-spacer', label: 'QSpacer' },
   { id: 'q-button-variants', label: 'QButton · 变体' },
   { id: 'q-button-states', label: 'QButton · 尺寸与状态' },
   { id: 'q-icon-button', label: 'QIconButton' },
@@ -436,6 +438,19 @@ onUnmounted(() => {
           <QText variant="caption">右</QText>
         </QInline>
       </div>
+    </ExampleBlock>
+
+    <ExampleBlock
+      id="q-spacer"
+      title="QSpacer"
+      description="在 flex 行内推开两侧内容"
+      :code="snippets.spacer"
+    >
+      <QInline class="w-full max-w-md rounded-md border border-border px-3 py-2">
+        <QText variant="caption">左</QText>
+        <QSpacer />
+        <QText variant="caption">右</QText>
+      </QInline>
     </ExampleBlock>
 
     <ExampleBlock

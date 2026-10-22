@@ -15,7 +15,7 @@
 - [x] `QContainer` — 页面最大宽度与水平内边距
 - [x] `QStack` / `QInline` — 垂直 / 水平间距布局
 - [x] `QDivider` — 分割线
-- [ ] `QSpacer` — 弹性空白（可选）
+- [x] `QSpacer` — 弹性空白（可选）
 
 ### 操作
 

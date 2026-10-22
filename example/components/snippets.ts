@@ -31,6 +31,12 @@ export const divider = `<QText>上方内容</QText>
 <QText>下方内容</QText>
 <QDivider label="或者" />`
 
+export const spacer = `<QInline class="w-full rounded-md border border-border px-3 py-2">
+  <QText variant="caption">左</QText>
+  <QSpacer />
+  <QText variant="caption">右</QText>
+</QInline>`
+
 export const buttonVariants = `<QButton variant="primary">Primary</QButton>
 <QButton variant="secondary">Secondary</QButton>
 <QButton variant="outline">Outline</QButton>
