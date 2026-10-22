@@ -37,6 +37,7 @@ import {
   QFileUpload,
   type QUploadFile,
   QSlider,
+  QColorSwatch,
   QIcon,
   QIconButton,
   QInput,
@@ -143,6 +144,7 @@ const dateRange = ref<QDateRange>({ start: '2026-10-01', end: '2026-10-15' })
 const startTime = ref<string | null>('09:30')
 const uploadFiles = ref<QUploadFile[]>([])
 const volume = ref(42)
+const tagColor = ref<string | null>('#2383e2')
 
 const page = ref(1)
 const step = ref('team')
@@ -268,6 +270,7 @@ const navItems = [
   { id: 'q-time-picker', label: 'QTimePicker' },
   { id: 'q-file-upload', label: 'QFileUpload' },
   { id: 'q-slider', label: 'QSlider' },
+  { id: 'q-color-swatch', label: 'QColorSwatch' },
   { id: 'q-textarea', label: 'QTextarea' },
   { id: 'q-select', label: 'QSelect' },
   { id: 'q-combobox', label: 'QCombobox' },
@@ -814,6 +817,27 @@ onUnmounted(() => {
     >
       <div class="w-full max-w-sm">
         <QSlider v-model="volume" label="音量" show-value :max="100" />
+      </div>
+    </ExampleBlock>
+
+    <ExampleBlock
+      id="q-color-swatch"
+      title="QColorSwatch"
+      description="预设色板 + 自定义 hex；标签/主题色"
+      :code="snippets.colorSwatch"
+    >
+      <div class="flex flex-wrap items-center gap-3">
+        <QColorSwatch v-model="tagColor" />
+        <QTag
+          v-if="tagColor"
+          :style="{
+            backgroundColor: `${tagColor}22`,
+            color: tagColor,
+            borderColor: `${tagColor}55`,
+          }"
+        >
+          标签预览
+        </QTag>
       </div>
     </ExampleBlock>
 

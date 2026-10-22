@@ -32,6 +32,11 @@ export { default as QFileUpload } from './QFileUpload.vue'
 export type { QUploadFile } from './QFileUpload.vue'
 export { default as QDropzone } from './QDropzone.vue'
 export { default as QSlider } from './QSlider.vue'
+export { default as QColorSwatch } from './QColorSwatch.vue'
+export {
+  DEFAULT_COLOR_SWATCHES,
+  type QColorOption,
+} from './colorSwatch'
 export { default as QCard } from './QCard.vue'
 export { default as QModal } from './QModal.vue'
 export { default as QDrawer } from './QDrawer.vue'

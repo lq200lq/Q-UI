@@ -87,7 +87,7 @@
 - [x] `QTimePicker`
 - [x] `QFileUpload` / `QDropzone`
 - [x] `QSlider`
-- [ ] `QColorSwatch` / 轻量取色（主题/标签色）
+- [x] `QColorSwatch` / 轻量取色（主题/标签色）
 - [ ] `QMentionInput`（`@` 提及，文档产品 P1–P2）
 
 ### 覆盖层进阶
