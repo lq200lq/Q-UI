@@ -86,7 +86,7 @@
 - [x] `QDatePicker` / `QDateRangePicker`
 - [x] `QTimePicker`
 - [x] `QFileUpload` / `QDropzone`
-- [ ] `QSlider`
+- [x] `QSlider`
 - [ ] `QColorSwatch` / 轻量取色（主题/标签色）
 - [ ] `QMentionInput`（`@` 提及，文档产品 P1–P2）
 

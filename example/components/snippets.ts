@@ -132,6 +132,8 @@ export const fileUpload = `<QFileUpload
   @reject="toast"
 />`
 
+export const slider = `<QSlider v-model="volume" label="音量" show-value :max="100" />`
+
 export const form = `const { values, errors, submitting, handleSubmit } = useForm({
   initialValues: { name: '', email: '' },
   rules: {

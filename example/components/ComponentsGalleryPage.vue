@@ -36,6 +36,7 @@ import {
   QTimePicker,
   QFileUpload,
   type QUploadFile,
+  QSlider,
   QIcon,
   QIconButton,
   QInput,
@@ -141,6 +142,7 @@ const dueDate = ref<string | null>('2026-10-22')
 const dateRange = ref<QDateRange>({ start: '2026-10-01', end: '2026-10-15' })
 const startTime = ref<string | null>('09:30')
 const uploadFiles = ref<QUploadFile[]>([])
+const volume = ref(42)
 
 const page = ref(1)
 const step = ref('team')
@@ -265,6 +267,7 @@ const navItems = [
   { id: 'q-date-picker', label: 'QDatePicker' },
   { id: 'q-time-picker', label: 'QTimePicker' },
   { id: 'q-file-upload', label: 'QFileUpload' },
+  { id: 'q-slider', label: 'QSlider' },
   { id: 'q-textarea', label: 'QTextarea' },
   { id: 'q-select', label: 'QSelect' },
   { id: 'q-combobox', label: 'QCombobox' },
@@ -800,6 +803,17 @@ onUnmounted(() => {
           :max-size="5 * 1024 * 1024"
           @reject="(reason) => toast({ title: reason, variant: 'warning' })"
         />
+      </div>
+    </ExampleBlock>
+
+    <ExampleBlock
+      id="q-slider"
+      title="QSlider"
+      description="区间滑块；轨道与拇指贴合主题色"
+      :code="snippets.slider"
+    >
+      <div class="w-full max-w-sm">
+        <QSlider v-model="volume" label="音量" show-value :max="100" />
       </div>
     </ExampleBlock>
 
