@@ -201,6 +201,15 @@ export const mediaBlocks = `<QImageBlock
 export const dividerBlock = `<QDividerBlock width="narrow" />
 <QDividerBlock width="full" />`
 
+export const toc = `<QToc
+  :items="[
+    { id: 'intro', label: '简介', level: 1 },
+    { id: 'setup', label: '安装', level: 2 },
+    { id: 'api', label: 'API', level: 1 },
+  ]"
+  active-id="setup"
+/>`
+
 export const mentionInput = `<QMentionInput
   v-model="comment"
   :options="[

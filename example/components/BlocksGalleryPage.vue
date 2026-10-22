@@ -22,6 +22,8 @@ import {
   QImageBlock,
   QVideoBlock,
   QDividerBlock,
+  QToc,
+  type QTocItem,
 } from '../../src/components/q'
 import { toast } from '../../src/composables'
 import ExampleBlock from '../_shared/ExampleBlock.vue'
@@ -122,7 +124,16 @@ const navItems = [
   { id: 'q-embed', label: 'QEmbed' },
   { id: 'q-media-blocks', label: 'QImage · QVideo' },
   { id: 'q-divider-block', label: 'QDividerBlock' },
+  { id: 'q-toc', label: 'QToc' },
 ] as const
+
+const tocItems: QTocItem[] = [
+  { id: 'intro', label: '简介', level: 1 },
+  { id: 'setup', label: '安装', level: 2 },
+  { id: 'usage', label: '用法', level: 2 },
+  { id: 'api', label: 'API', level: 1 },
+]
+const tocActive = ref('setup')
 </script>
 
 <template>
@@ -371,6 +382,21 @@ const navItems = [
         <QDividerBlock width="narrow" />
         <p class="text-xs text-primary/50">full</p>
         <QDividerBlock width="full" />
+      </div>
+    </ExampleBlock>
+
+    <ExampleBlock
+      id="q-toc"
+      title="QToc"
+      description="页面目录；层级缩进；当前项高亮"
+      :code="snippets.toc"
+    >
+      <div class="w-56 rounded-md border border-border bg-surface p-3">
+        <QToc
+          :items="tocItems"
+          :active-id="tocActive"
+          @select="(item) => (tocActive = item.id)"
+        />
       </div>
     </ExampleBlock>
   </ExampleGalleryShell>

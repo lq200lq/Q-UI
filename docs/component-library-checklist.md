@@ -120,7 +120,7 @@
 - [x] `QEmbed`
 - [x] `QImageBlock` / `QVideoBlock`
 - [x] `QDividerBlock`（含「窄/全宽」）
-- [ ] `QToc` — 目录
+- [x] `QToc` — 目录
 
 ### 看板 / 数据库感（若产品需要）
 
