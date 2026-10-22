@@ -175,6 +175,10 @@ export const toggle = `<QToggle v-model:open="open" title="展开查看详情">
   折叠块内容。
 </QToggle>`
 
+export const quote = `<QQuote cite="— Ada Lovelace">
+  诗意科学将把我们带到多远。
+</QQuote>`
+
 export const mentionInput = `<QMentionInput
   v-model="comment"
   :options="[
