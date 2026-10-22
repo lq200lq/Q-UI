@@ -21,7 +21,7 @@
 
 - [x] `QButton` — primary / secondary / outline / ghost / danger；sm / md；loading / disabled
 - [x] `QIconButton` — 仅图标 + `aria-label`
-- [ ] `QLink` — 文内链接 / 外部链接样式
+- [x] `QLink` — 文内链接 / 外部链接样式
 - [x] `QKbd` — 快捷键展示（工具产品常见）
 
 ### 表单输入

@@ -37,6 +37,11 @@ export const spacer = `<QInline class="w-full rounded-md border border-border px
   <QText variant="caption">右</QText>
 </QInline>`
 
+export const link = `<QLink to="/example/layout">打开布局壳</QLink>
+<QLink href="https://example.com" external>外部链接</QLink>
+<QLink variant="muted" href="#">次要链接</QLink>
+<QLink variant="underline" href="#">下划线链接</QLink>`
+
 export const buttonVariants = `<QButton variant="primary">Primary</QButton>
 <QButton variant="secondary">Secondary</QButton>
 <QButton variant="outline">Outline</QButton>

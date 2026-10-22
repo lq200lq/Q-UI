@@ -13,6 +13,7 @@ import {
   QDivider,
   QSpacer,
   QButton,
+  QLink,
   QCallout,
   QCard,
   QCheckbox,
@@ -173,6 +174,7 @@ const navItems = [
   { id: 'q-spacer', label: 'QSpacer' },
   { id: 'q-button-variants', label: 'QButton · 变体' },
   { id: 'q-button-states', label: 'QButton · 尺寸与状态' },
+  { id: 'q-link', label: 'QLink' },
   { id: 'q-icon-button', label: 'QIconButton' },
   { id: 'q-kbd', label: 'QKbd' },
   { id: 'q-field-input', label: 'QInput · QField' },
@@ -482,6 +484,21 @@ onUnmounted(() => {
         </QButton>
         <QButton disabled>Disabled</QButton>
       </div>
+    </ExampleBlock>
+
+    <ExampleBlock
+      id="q-link"
+      title="QLink"
+      description="路由 / 外链；default · muted · underline"
+      :code="snippets.link"
+    >
+      <QInline gap="md" wrap>
+        <QLink to="/example/layout">打开布局壳</QLink>
+        <QLink href="https://example.com" external>外部链接</QLink>
+        <QLink variant="muted" href="#">次要链接</QLink>
+        <QLink variant="underline" href="#">下划线链接</QLink>
+        <QLink disabled href="#">禁用</QLink>
+      </QInline>
     </ExampleBlock>
 
     <ExampleBlock
