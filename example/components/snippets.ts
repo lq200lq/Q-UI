@@ -223,6 +223,11 @@ export const property = `<QProperty label="状态" type="select" model-value="do
 <QProperty label="负责人" type="people" :people="people" />
 <QProperty label="截止日期" type="date" model-value="2026-10-22" />`
 
+export const filterBar = `<QViewTabs v-model="view" :items="viewItems" />
+<QFilterBar v-model:query="query">
+  <QSortMenu v-model="sort" :options="sortOptions" />
+</QFilterBar>`
+
 export const mentionInput = `<QMentionInput
   v-model="comment"
   :options="[

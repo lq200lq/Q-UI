@@ -8,6 +8,11 @@ import {
   QProperty,
   type QPropertyOption,
   type QPropertyPerson,
+  QFilterBar,
+  QSortMenu,
+  type QSortOption,
+  QViewTabs,
+  type QViewTabItem,
 } from '../../src/components/q'
 import { toast } from '../../src/composables'
 import ExampleBlock from '../_shared/ExampleBlock.vue'
@@ -25,9 +30,24 @@ const people: QPropertyPerson[] = [
   { id: 'alan', name: 'Alan' },
 ]
 
+const view = ref('table')
+const filterQuery = ref('')
+const sort = ref<string | null>('updated')
+const viewItems: QViewTabItem[] = [
+  { value: 'table', label: '表格' },
+  { value: 'board', label: '看板' },
+  { value: 'list', label: '列表' },
+]
+const sortOptions: QSortOption[] = [
+  { value: 'updated', label: '最近更新' },
+  { value: 'name', label: '名称' },
+  { value: 'created', label: '创建时间' },
+]
+
 const navItems = [
   { id: 'q-board', label: 'QBoard' },
   { id: 'q-property', label: 'QProperty' },
+  { id: 'q-filter-bar', label: 'Filter · Sort · Views' },
 ] as const
 </script>
 
@@ -94,6 +114,24 @@ const navItems = [
         />
         <QProperty label="负责人" type="people" :people="people" />
         <QProperty label="截止日期" type="date" model-value="2026-10-22" />
+      </div>
+    </ExampleBlock>
+
+    <ExampleBlock
+      id="q-filter-bar"
+      title="QFilterBar · QSortMenu · QViewTabs"
+      description="视图切换 + 搜索筛选 + 排序菜单"
+      :code="snippets.filterBar"
+    >
+      <div class="w-full max-w-xl space-y-3">
+        <QViewTabs v-model="view" :items="viewItems" />
+        <QFilterBar v-model:query="filterQuery" placeholder="筛选任务…">
+          <QSortMenu v-model="sort" :options="sortOptions" />
+        </QFilterBar>
+        <p class="text-xs text-primary/55">
+          视图 {{ view }} · 查询「{{ filterQuery || '空' }}」 · 排序
+          {{ sort }}
+        </p>
       </div>
     </ExampleBlock>
   </ExampleGalleryShell>
