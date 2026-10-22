@@ -136,7 +136,7 @@
 ### Composables（建议同步沉淀）
 
 - [x] `useDisclosure` — 开关（Modal / Popover）→ `src/composables/useDisclosure.ts`
-- [ ] `useControllable` — 受控 / 非受控统一
+- [x] `useControllable` — 受控 / 非受控统一 → `src/composables/useControllable.ts`
 - [x] `useFocusTrap` — `src/composables/useFocusTrap.ts`（含打开聚焦 / 关闭回焦）
 - [x] `useBodyScrollLock` — `src/composables/useBodyScrollLock.ts`
 - [x] `useClickOutside` — `src/composables/useClickOutside.ts`
