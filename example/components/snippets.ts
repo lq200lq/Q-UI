@@ -324,6 +324,29 @@ export const contextMenu = `<QContextMenu
   </div>
 </QContextMenu>`
 
+export const tree = `<QTree
+  v-model="selected"
+  v-model:expanded="expanded"
+  :nodes="[
+    {
+      key: 'workspace',
+      label: '工作区',
+      icon: 'folder',
+      children: [
+        { key: 'docs', label: '文档', icon: 'file' },
+        {
+          key: 'eng',
+          label: '工程',
+          icon: 'folder',
+          children: [
+            { key: 'api', label: 'API 设计', icon: 'file' },
+          ],
+        },
+      ],
+    },
+  ]"
+/>`
+
 export const stepper = `<QStepper
   v-model="step"
   :items="[

@@ -49,6 +49,8 @@ import {
   QEmpty,
   QList,
   QListItem,
+  QTree,
+  type QTreeNode,
   QSkeleton,
   QSpinner,
   QTable,
@@ -110,6 +112,28 @@ const stepperItems: QStepperItem[] = [
   { value: 'basics', label: '基本信息', description: '名称与描述' },
   { value: 'team', label: '团队', description: '成员与权限' },
   { value: 'review', label: '确认', description: '检查并提交' },
+]
+const treeSelected = ref<string | null>('docs')
+const treeExpanded = ref(['workspace', 'eng'])
+const treeNodes: QTreeNode[] = [
+  {
+    key: 'workspace',
+    label: '工作区',
+    icon: 'folder',
+    children: [
+      { key: 'docs', label: '文档', icon: 'file' },
+      {
+        key: 'eng',
+        label: '工程',
+        icon: 'folder',
+        children: [
+          { key: 'api', label: 'API 设计', icon: 'file' },
+          { key: 'rfc', label: 'RFC', icon: 'file', disabled: true },
+        ],
+      },
+      { key: 'archive', label: '归档', icon: 'folder' },
+    ],
+  },
 ]
 const confirmOpen = ref(false)
 const alertVisible = ref(true)
@@ -225,6 +249,7 @@ const navItems = [
   { id: 'q-tabs', label: 'QTabs' },
   { id: 'q-breadcrumb', label: 'QBreadcrumb' },
   { id: 'q-list', label: 'QList' },
+  { id: 'q-tree', label: 'QTree' },
   { id: 'q-table', label: 'QTable' },
   { id: 'q-badge', label: 'QBadge · QTag' },
   { id: 'q-empty', label: 'QEmpty' },
@@ -1253,6 +1278,24 @@ onUnmounted(() => {
           disabled
         />
       </QList>
+    </ExampleBlock>
+
+    <ExampleBlock
+      id="q-tree"
+      title="QTree · QTreeItem"
+      description="可展开目录树；选中态；受控 expanded"
+      :code="snippets.tree"
+    >
+      <div class="w-full max-w-sm rounded-md border border-border bg-surface p-2">
+        <QTree
+          v-model="treeSelected"
+          v-model:expanded="treeExpanded"
+          :nodes="treeNodes"
+        />
+      </div>
+      <p class="mt-2 text-xs text-primary/55">
+        选中：{{ treeSelected ?? '无' }}
+      </p>
     </ExampleBlock>
 
     <ExampleBlock
