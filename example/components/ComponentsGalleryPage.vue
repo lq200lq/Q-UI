@@ -7,6 +7,7 @@ import {
   QAvatarGroup,
   QText,
   QHeading,
+  QContainer,
   QButton,
   QCallout,
   QCard,
@@ -162,6 +163,7 @@ const crumbs: QBreadcrumbItem[] = [
 const navItems = [
   { id: 'q-text', label: 'QText' },
   { id: 'q-heading', label: 'QHeading' },
+  { id: 'q-container', label: 'QContainer' },
   { id: 'q-button-variants', label: 'QButton · 变体' },
   { id: 'q-button-states', label: 'QButton · 尺寸与状态' },
   { id: 'q-icon-button', label: 'QIconButton' },
@@ -375,6 +377,20 @@ onUnmounted(() => {
         <QHeading :level="2">区块标题</QHeading>
         <QHeading :level="3">小节标题</QHeading>
         <QHeading :level="4" muted>次级标题</QHeading>
+      </div>
+    </ExampleBlock>
+
+    <ExampleBlock
+      id="q-container"
+      title="QContainer"
+      description="sm / md / lg / xl / full；padding none–lg"
+      :code="snippets.container"
+    >
+      <div class="w-full rounded-md border border-dashed border-border bg-hover/40 py-2">
+        <QContainer size="sm" padding="md" class="rounded-md bg-surface py-3 shadow-sm">
+          <QHeading :level="3">窄内容</QHeading>
+          <QText variant="muted" class="mt-1">size=sm · 适合文章与设置表单。</QText>
+        </QContainer>
       </div>
     </ExampleBlock>
 

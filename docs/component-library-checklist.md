@@ -12,7 +12,7 @@
 
 - [x] `QText` — 正文 / 辅助 / caption / lead / code
 - [x] `QHeading` — h1–h4，对齐主题字号
-- [ ] `QContainer` — 页面最大宽度与水平内边距
+- [x] `QContainer` — 页面最大宽度与水平内边距
 - [ ] `QStack` / `QInline` — 垂直 / 水平间距布局
 - [ ] `QDivider` — 分割线
 - [ ] `QSpacer` — 弹性空白（可选）

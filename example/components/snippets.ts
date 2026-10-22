@@ -11,6 +11,11 @@ export const heading = `<QHeading :level="1">页面标题</QHeading>
 <QHeading :level="3">小节标题</QHeading>
 <QHeading :level="4" muted>次级标题</QHeading>`
 
+export const container = `<QContainer size="md" padding="md">
+  <QHeading :level="2">内容区</QHeading>
+  <QText variant="muted">居中限宽，带水平内边距。</QText>
+</QContainer>`
+
 export const buttonVariants = `<QButton variant="primary">Primary</QButton>
 <QButton variant="secondary">Secondary</QButton>
 <QButton variant="outline">Outline</QButton>
