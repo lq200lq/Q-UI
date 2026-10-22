@@ -19,6 +19,8 @@ import {
   QToggle,
   QBookmark,
   QEmbed,
+  QImageBlock,
+  QVideoBlock,
 } from '../../src/components/q'
 import { toast } from '../../src/composables'
 import ExampleBlock from '../_shared/ExampleBlock.vue'
@@ -117,6 +119,7 @@ const navItems = [
   { id: 'q-code-block', label: 'QCodeBlock' },
   { id: 'q-bookmark', label: 'QBookmark' },
   { id: 'q-embed', label: 'QEmbed' },
+  { id: 'q-media-blocks', label: 'QImage · QVideo' },
 ] as const
 </script>
 
@@ -332,6 +335,25 @@ const navItems = [
         <QEmbed
           src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ"
           title="示例嵌入"
+        />
+      </div>
+    </ExampleBlock>
+
+    <ExampleBlock
+      id="q-media-blocks"
+      title="QImageBlock · QVideoBlock"
+      description="图片 / 视频内容块；可选 caption"
+      :code="snippets.mediaBlocks"
+    >
+      <div class="flex w-full max-w-lg flex-col gap-6">
+        <QImageBlock
+          src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200&q=80"
+          alt="抽象纹理"
+          caption="图片块示意"
+        />
+        <QVideoBlock
+          src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
+          caption="视频块示意（示例素材）"
         />
       </div>
     </ExampleBlock>

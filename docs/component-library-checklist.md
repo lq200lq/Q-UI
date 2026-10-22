@@ -118,7 +118,7 @@
 - [x] `QCodeBlock` + 复制按钮
 - [x] `QBookmark` / 链接预览卡
 - [x] `QEmbed`
-- [ ] `QImageBlock` / `QVideoBlock`
+- [x] `QImageBlock` / `QVideoBlock`
 - [ ] `QDividerBlock`（含「窄/全宽」）
 - [ ] `QToc` — 目录
 

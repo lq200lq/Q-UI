@@ -192,6 +192,12 @@ export const embed = `<QEmbed
   title="示例视频"
 />`
 
+export const mediaBlocks = `<QImageBlock
+  src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200&q=80"
+  caption="封面示意"
+/>
+<QVideoBlock src="/demo.mp4" caption="演示视频" />`
+
 export const mentionInput = `<QMentionInput
   v-model="comment"
   :options="[
