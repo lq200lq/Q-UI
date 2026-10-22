@@ -48,6 +48,8 @@ import {
   type QSlashMenuItem,
   QBlockToolbar,
   type QBlockToolbarItem,
+  QCover,
+  QPageIcon,
   QIcon,
   QIconButton,
   QInput,
@@ -199,6 +201,11 @@ function onToolbarAction(item: QBlockToolbarItem) {
   )
   toast(item.label)
 }
+
+const coverSrc = ref(
+  'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200&q=80',
+)
+const pageEmoji = ref('📄')
 const mentionText = ref('请 @')
 const mentionOptions: QMentionOption[] = [
   { id: 'ada', label: 'Ada Lovelace', description: '工程' },
@@ -339,6 +346,7 @@ const navItems = [
   { id: 'q-inline-editable', label: 'QInlineEditable' },
   { id: 'q-slash-menu', label: 'QSlashMenu' },
   { id: 'q-block-toolbar', label: 'QBlockToolbar' },
+  { id: 'q-cover', label: 'QCover · QPageIcon' },
   { id: 'q-textarea', label: 'QTextarea' },
   { id: 'q-select', label: 'QSelect' },
   { id: 'q-combobox', label: 'QCombobox' },
@@ -1025,6 +1033,30 @@ onUnmounted(() => {
         :items="toolbarItems"
         @action="onToolbarAction"
       />
+    </ExampleBlock>
+
+    <ExampleBlock
+      id="q-cover"
+      title="QCover · QPageIcon"
+      description="页面封面与可点击页面图标"
+      :code="snippets.cover"
+    >
+      <div class="w-full max-w-xl overflow-hidden rounded-md border border-border">
+        <QCover
+          :src="coverSrc"
+          @change="toast('更换封面')"
+          @remove="coverSrc = ''"
+        />
+        <div class="relative px-4 pb-4">
+          <QPageIcon
+            class="-mt-8"
+            :emoji="pageEmoji"
+            @click="
+              pageEmoji = pageEmoji === '📄' ? '✨' : '📄'
+            "
+          />
+        </div>
+      </div>
     </ExampleBlock>
 
     <ExampleBlock

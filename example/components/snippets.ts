@@ -161,6 +161,12 @@ export const blockToolbar = `<QBlockToolbar
   @action="onAction"
 />`
 
+export const cover = `<QCover
+  src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200&q=80"
+  @change="onChangeCover"
+/>
+<QPageIcon emoji="📄" class="-mt-8 ml-4" />`
+
 export const mentionInput = `<QMentionInput
   v-model="comment"
   :options="[
