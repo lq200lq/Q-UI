@@ -10,7 +10,7 @@
 
 ### 排版与布局
 
-- [ ] `QText` — 正文 / 辅助 / 标题层级（或约定 Tailwind 排版类，不单独组件也可）
+- [x] `QText` — 正文 / 辅助 / caption / lead / code
 - [ ] `QHeading` — h1–h3，对齐主题字号
 - [ ] `QContainer` — 页面最大宽度与水平内边距
 - [ ] `QStack` / `QInline` — 垂直 / 水平间距布局

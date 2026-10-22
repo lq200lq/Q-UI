@@ -1,5 +1,11 @@
 /** Source samples shown under each ExampleBlock (keep in sync with preview). */
 
+export const text = `<QText>正文段落，用于说明与正文内容。</QText>
+<QText variant="muted">辅助说明，颜色更弱。</QText>
+<QText variant="caption">元信息 · caption</QText>
+<QText variant="lead">引导句，稍大一号。</QText>
+<QText variant="code">token.primary</QText>`
+
 export const buttonVariants = `<QButton variant="primary">Primary</QButton>
 <QButton variant="secondary">Secondary</QButton>
 <QButton variant="outline">Outline</QButton>

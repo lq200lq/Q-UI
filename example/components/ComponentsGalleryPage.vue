@@ -5,6 +5,7 @@ import {
   QAlert,
   QAvatar,
   QAvatarGroup,
+  QText,
   QButton,
   QCallout,
   QCard,
@@ -158,6 +159,7 @@ const crumbs: QBreadcrumbItem[] = [
 ]
 
 const navItems = [
+  { id: 'q-text', label: 'QText' },
   { id: 'q-button-variants', label: 'QButton · 变体' },
   { id: 'q-button-states', label: 'QButton · 尺寸与状态' },
   { id: 'q-icon-button', label: 'QIconButton' },
@@ -341,6 +343,24 @@ onUnmounted(() => {
         </li>
       </ul>
     </nav>
+
+    <ExampleBlock
+      id="q-text"
+      title="QText"
+      description="body / muted / caption / lead / code；可选 truncate / clamp"
+      :code="snippets.text"
+    >
+      <div class="flex w-full max-w-lg flex-col gap-3">
+        <QText>正文段落，用于说明与正文内容。</QText>
+        <QText variant="muted">辅助说明，颜色更弱，适合描述与次要信息。</QText>
+        <QText variant="caption">元信息 · caption</QText>
+        <QText variant="lead">引导句，稍大一号，适合段落开场。</QText>
+        <QText variant="code">token.primary</QText>
+        <QText truncate class="max-w-xs">
+          超长文本会被截断：这是一段用来演示 truncate 的很长很长的句子。
+        </QText>
+      </div>
+    </ExampleBlock>
 
     <ExampleBlock
       id="q-button-variants"
