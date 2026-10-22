@@ -78,7 +78,7 @@
 - [ ] `QTree` / `QTreeItem`（目录树、页面树）
 - [x] `QDescriptionList` — 键值描述列表
 - [x] `QProgress` / `QProgressCircle`
-- [ ] `QStat` — 简单指标（慎用，避免仪表盘堆砌）
+- [x] `QStat` — 简单指标（慎用，避免仪表盘堆砌）
 
 ### 表单增强
 

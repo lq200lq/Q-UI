@@ -15,6 +15,7 @@ import {
   QDrawer,
   QDropdownMenu,
   QDescriptionList,
+  QStat,
   QEmpty,
   QIcon,
   QIconButton,
@@ -851,6 +852,11 @@ function onCommandSelect(item: QCommandItem) {
         <div
           class="rounded-lg border border-border bg-surface p-4 shadow-sm md:p-5"
         >
+          <QInline gap="xl" class="mb-5">
+            <QStat label="文档" :value="allDocs.length" hint="工作区内" />
+            <QStat label="成员" :value="members.length" />
+            <QStat label="存储" :value="`${storageUsed}%`" muted />
+          </QInline>
           <div class="mb-4 flex items-start justify-between gap-4">
             <div>
               <p class="text-sm font-medium text-primary">工作区用量</p>

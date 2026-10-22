@@ -41,6 +41,7 @@ import {
   QBreadcrumb,
   QBadge,
   QDescriptionList,
+  QStat,
   QEmpty,
   QList,
   QListItem,
@@ -205,6 +206,7 @@ const navItems = [
   { id: 'q-badge', label: 'QBadge · QTag' },
   { id: 'q-empty', label: 'QEmpty' },
   { id: 'q-description-list', label: 'QDescriptionList' },
+  { id: 'q-stat', label: 'QStat' },
   { id: 'q-skeleton', label: 'QSkeleton' },
   { id: 'q-spinner', label: 'QSpinner' },
   { id: 'q-icon', label: 'QIcon' },
@@ -1270,6 +1272,19 @@ onUnmounted(() => {
           ]"
         />
       </div>
+    </ExampleBlock>
+
+    <ExampleBlock
+      id="q-stat"
+      title="QStat"
+      description="克制的单项指标；避免仪表盘堆砌"
+      :code="snippets.stat"
+    >
+      <QInline gap="xl">
+        <QStat label="文档" :value="128" hint="本周 +12" />
+        <QStat label="成员" :value="24" />
+        <QStat label="存储" value="72%" muted hint="剩余 2.1 GB" />
+      </QInline>
     </ExampleBlock>
 
     <ExampleBlock

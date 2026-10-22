@@ -368,6 +368,12 @@ export const descriptionList = `<QDescriptionList
   ]"
 />`
 
+export const stat = `<QInline gap="xl">
+  <QStat label="文档" :value="128" hint="本周 +12" />
+  <QStat label="成员" :value="24" />
+  <QStat label="存储" value="72%" muted hint="剩余 2.1 GB" />
+</QInline>`
+
 export const badge = `<QBadge variant="success" dot>已发布</QBadge>
 <QBadge variant="warning">草稿</QBadge>
 <QBadge variant="info">审阅中</QBadge>
