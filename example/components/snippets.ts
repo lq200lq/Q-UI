@@ -16,6 +16,16 @@ export const container = `<QContainer size="md" padding="md">
   <QText variant="muted">居中限宽，带水平内边距。</QText>
 </QContainer>`
 
+export const stackInline = `<QStack gap="md">
+  <QText>垂直堆叠第一项</QText>
+  <QText variant="muted">第二项</QText>
+</QStack>
+
+<QInline gap="sm">
+  <QButton size="sm">保存</QButton>
+  <QButton size="sm" variant="secondary">取消</QButton>
+</QInline>`
+
 export const buttonVariants = `<QButton variant="primary">Primary</QButton>
 <QButton variant="secondary">Secondary</QButton>
 <QButton variant="outline">Outline</QButton>

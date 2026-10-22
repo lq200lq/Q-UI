@@ -8,6 +8,8 @@ import {
   QText,
   QHeading,
   QContainer,
+  QStack,
+  QInline,
   QButton,
   QCallout,
   QCard,
@@ -164,6 +166,7 @@ const navItems = [
   { id: 'q-text', label: 'QText' },
   { id: 'q-heading', label: 'QHeading' },
   { id: 'q-container', label: 'QContainer' },
+  { id: 'q-stack-inline', label: 'QStack · QInline' },
   { id: 'q-button-variants', label: 'QButton · 变体' },
   { id: 'q-button-states', label: 'QButton · 尺寸与状态' },
   { id: 'q-icon-button', label: 'QIconButton' },
@@ -391,6 +394,26 @@ onUnmounted(() => {
           <QHeading :level="3">窄内容</QHeading>
           <QText variant="muted" class="mt-1">size=sm · 适合文章与设置表单。</QText>
         </QContainer>
+      </div>
+    </ExampleBlock>
+
+    <ExampleBlock
+      id="q-stack-inline"
+      title="QStack · QInline"
+      description="垂直 / 水平间距；gap xs–xl"
+      :code="snippets.stackInline"
+    >
+      <div class="flex w-full max-w-md flex-col gap-5">
+        <QStack gap="md">
+          <QText>垂直堆叠第一项</QText>
+          <QText variant="muted">第二项 · gap=md</QText>
+          <QText variant="caption">第三项</QText>
+        </QStack>
+        <QInline gap="sm">
+          <QButton size="sm">保存</QButton>
+          <QButton size="sm" variant="secondary">取消</QButton>
+          <QBadge variant="info">草稿</QBadge>
+        </QInline>
       </div>
     </ExampleBlock>
 
