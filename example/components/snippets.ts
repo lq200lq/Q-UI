@@ -153,6 +153,14 @@ export const slashMenu = `<QSlashMenu
   @select="onSlash"
 />`
 
+export const blockToolbar = `<QBlockToolbar
+  v-model:open="toolbarOpen"
+  :x="240"
+  :y="180"
+  :items="toolbarItems"
+  @action="onAction"
+/>`
+
 export const mentionInput = `<QMentionInput
   v-model="comment"
   :options="[

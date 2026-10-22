@@ -46,6 +46,8 @@ import {
   QInlineEditable,
   QSlashMenu,
   type QSlashMenuItem,
+  QBlockToolbar,
+  type QBlockToolbarItem,
   QIcon,
   QIconButton,
   QInput,
@@ -174,6 +176,28 @@ function openSlashDemo() {
 
 function onSlashSelect(item: QSlashMenuItem) {
   toast(`插入「${item.label}」`)
+}
+
+const toolbarOpen = ref(false)
+const toolbarItems = ref<QBlockToolbarItem[]>([
+  { key: 'heading', label: '标题', icon: 'heading', active: true },
+  { key: 'edit', label: '编辑', icon: 'edit' },
+  { key: 'sep', label: '', icon: 'minus', separator: true },
+  { key: 'link', label: '链接', icon: 'link' },
+  { key: 'comment', label: '评论', icon: 'message-square' },
+])
+
+function toggleToolbarDemo() {
+  toolbarOpen.value = !toolbarOpen.value
+}
+
+function onToolbarAction(item: QBlockToolbarItem) {
+  toolbarItems.value = toolbarItems.value.map((t) =>
+    t.key === item.key && !t.separator
+      ? { ...t, active: !t.active }
+      : t,
+  )
+  toast(item.label)
 }
 const mentionText = ref('请 @')
 const mentionOptions: QMentionOption[] = [
@@ -314,6 +338,7 @@ const navItems = [
   { id: 'q-editable-title', label: 'QEditableTitle' },
   { id: 'q-inline-editable', label: 'QInlineEditable' },
   { id: 'q-slash-menu', label: 'QSlashMenu' },
+  { id: 'q-block-toolbar', label: 'QBlockToolbar' },
   { id: 'q-textarea', label: 'QTextarea' },
   { id: 'q-select', label: 'QSelect' },
   { id: 'q-combobox', label: 'QCombobox' },
@@ -982,6 +1007,24 @@ onUnmounted(() => {
           @select="onSlashSelect"
         />
       </div>
+    </ExampleBlock>
+
+    <ExampleBlock
+      id="q-block-toolbar"
+      title="QBlockToolbar"
+      description="选区浮动工具条；Esc 关闭"
+      :code="snippets.blockToolbar"
+    >
+      <QButton size="sm" variant="outline" @click="toggleToolbarDemo">
+        {{ toolbarOpen ? '关闭工具条' : '显示工具条' }}
+      </QButton>
+      <QBlockToolbar
+        v-model:open="toolbarOpen"
+        :x="320"
+        :y="220"
+        :items="toolbarItems"
+        @action="onToolbarAction"
+      />
     </ExampleBlock>
 
     <ExampleBlock
