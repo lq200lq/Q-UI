@@ -104,7 +104,7 @@
 
 - [x] `QBlock` — 块容器（hover 高亮、左侧拖拽手柄 ⋮⋮）
 - [x] `QBlockHandle` — Drag Handle Illusion
-- [ ] `QEditableTitle` — 页面标题就地编辑
+- [x] `QEditableTitle` — 页面标题就地编辑
 - [ ] `QInlineEditable` — 单元格 / 属性就地编辑
 - [ ] `QSlashMenu` — `/` 命令菜单
 - [ ] `QBlockToolbar` — 选区浮动工具条

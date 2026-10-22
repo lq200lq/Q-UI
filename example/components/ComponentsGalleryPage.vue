@@ -42,6 +42,7 @@ import {
   type QMentionOption,
   QBlockHandle,
   QBlock,
+  QEditableTitle,
   QIcon,
   QIconButton,
   QInput,
@@ -149,6 +150,7 @@ const startTime = ref<string | null>('09:30')
 const uploadFiles = ref<QUploadFile[]>([])
 const volume = ref(42)
 const tagColor = ref<string | null>('#2383e2')
+const pageTitle = ref('产品规格')
 const mentionText = ref('请 @')
 const mentionOptions: QMentionOption[] = [
   { id: 'ada', label: 'Ada Lovelace', description: '工程' },
@@ -285,6 +287,7 @@ const navItems = [
   { id: 'q-mention-input', label: 'QMentionInput' },
   { id: 'q-block-handle', label: 'QBlockHandle' },
   { id: 'q-block', label: 'QBlock' },
+  { id: 'q-editable-title', label: 'QEditableTitle' },
   { id: 'q-textarea', label: 'QTextarea' },
   { id: 'q-select', label: 'QSelect' },
   { id: 'q-combobox', label: 'QCombobox' },
@@ -900,6 +903,17 @@ onUnmounted(() => {
             选中态块会保留高亮与手柄。
           </p>
         </QBlock>
+      </div>
+    </ExampleBlock>
+
+    <ExampleBlock
+      id="q-editable-title"
+      title="QEditableTitle"
+      description="点击就地编辑页面标题；Enter 提交 / Esc 取消"
+      :code="snippets.editableTitle"
+    >
+      <div class="w-full max-w-lg">
+        <QEditableTitle v-model="pageTitle" placeholder="无标题" />
       </div>
     </ExampleBlock>
 
