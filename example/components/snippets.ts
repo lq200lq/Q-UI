@@ -219,6 +219,10 @@ export const board = `<QBoard>
   </QBoardColumn>
 </QBoard>`
 
+export const property = `<QProperty label="状态" type="select" model-value="doing" :options="statusOptions" />
+<QProperty label="负责人" type="people" :people="people" />
+<QProperty label="截止日期" type="date" model-value="2026-10-22" />`
+
 export const mentionInput = `<QMentionInput
   v-model="comment"
   :options="[

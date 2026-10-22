@@ -63,6 +63,12 @@ export type { QTocItem } from './QToc.vue'
 export { default as QBoard } from './QBoard.vue'
 export { default as QBoardColumn } from './QBoardColumn.vue'
 export { default as QBoardCard } from './QBoardCard.vue'
+export { default as QProperty } from './QProperty.vue'
+export type {
+  QPropertyType,
+  QPropertyPerson,
+  QPropertyOption,
+} from './QProperty.vue'
 export { default as QCard } from './QCard.vue'
 export { default as QModal } from './QModal.vue'
 export { default as QDrawer } from './QDrawer.vue'
