@@ -181,6 +181,12 @@ export const quote = `<QQuote cite="— Ada Lovelace">
 
 export const codeBlock = `<QCodeBlock language="ts" :code="sample" />`
 
+export const bookmark = `<QBookmark
+  url="https://notion.so"
+  title="Notion"
+  description="All-in-one workspace"
+/>`
+
 export const mentionInput = `<QMentionInput
   v-model="comment"
   :options="[

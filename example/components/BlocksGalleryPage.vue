@@ -17,6 +17,7 @@ import {
   QSlashMenu,
   type QSlashMenuItem,
   QToggle,
+  QBookmark,
 } from '../../src/components/q'
 import { toast } from '../../src/composables'
 import ExampleBlock from '../_shared/ExampleBlock.vue'
@@ -113,6 +114,7 @@ const navItems = [
   { id: 'q-toggle', label: 'QToggle' },
   { id: 'q-quote', label: 'QQuote' },
   { id: 'q-code-block', label: 'QCodeBlock' },
+  { id: 'q-bookmark', label: 'QBookmark' },
 ] as const
 </script>
 
@@ -299,6 +301,22 @@ const navItems = [
     >
       <div class="w-full max-w-lg">
         <QCodeBlock language="ts" :code="sampleCode" />
+      </div>
+    </ExampleBlock>
+
+    <ExampleBlock
+      id="q-bookmark"
+      title="QBookmark"
+      description="链接预览卡；可选缩略图"
+      :code="snippets.bookmark"
+    >
+      <div class="w-full max-w-lg">
+        <QBookmark
+          url="https://www.notion.com"
+          title="Notion"
+          description="The AI workspace that works for you."
+          image="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=400&q=80"
+        />
       </div>
     </ExampleBlock>
   </ExampleGalleryShell>

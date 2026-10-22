@@ -116,7 +116,7 @@
 - [x] `QToggle` / 折叠块
 - [x] `QQuote`
 - [x] `QCodeBlock` + 复制按钮
-- [ ] `QBookmark` / 链接预览卡
+- [x] `QBookmark` / 链接预览卡
 - [ ] `QEmbed`（可选）
 - [ ] `QImageBlock` / `QVideoBlock`
 - [ ] `QDividerBlock`（含「窄/全宽」）
