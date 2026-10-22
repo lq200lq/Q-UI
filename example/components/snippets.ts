@@ -228,6 +228,13 @@ export const filterBar = `<QViewTabs v-model="view" :items="viewItems" />
   <QSortMenu v-model="sort" :options="sortOptions" />
 </QFilterBar>`
 
+export const databaseTable = `<QDatabaseTable
+  v-model:selected-id="selectedId"
+  :columns="columns"
+  :rows="rows"
+  @row-action="onRowAction"
+/>`
+
 export const mentionInput = `<QMentionInput
   v-model="comment"
   :options="[

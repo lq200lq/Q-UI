@@ -13,6 +13,9 @@ import {
   type QSortOption,
   QViewTabs,
   type QViewTabItem,
+  QDatabaseTable,
+  type QDatabaseColumn,
+  type QDatabaseRow,
 } from '../../src/components/q'
 import { toast } from '../../src/composables'
 import ExampleBlock from '../_shared/ExampleBlock.vue'
@@ -44,10 +47,32 @@ const sortOptions: QSortOption[] = [
   { value: 'created', label: '创建时间' },
 ]
 
+const dbSelected = ref<string | null>('1')
+const dbColumns: QDatabaseColumn[] = [
+  { key: 'name', label: '名称' },
+  { key: 'status', label: '状态', width: '100px' },
+  { key: 'owner', label: '负责人', width: '100px' },
+]
+const dbRows: QDatabaseRow[] = [
+  {
+    id: '1',
+    cells: { name: '产品规格', status: '进行中', owner: 'Ada' },
+  },
+  {
+    id: '2',
+    cells: { name: '设计系统', status: '待办', owner: 'Alan' },
+  },
+  {
+    id: '3',
+    cells: { name: '发布清单', status: '完成', owner: 'Grace' },
+  },
+]
+
 const navItems = [
   { id: 'q-board', label: 'QBoard' },
   { id: 'q-property', label: 'QProperty' },
   { id: 'q-filter-bar', label: 'Filter · Sort · Views' },
+  { id: 'q-database-table', label: 'QDatabaseTable' },
 ] as const
 </script>
 
@@ -132,6 +157,22 @@ const navItems = [
           视图 {{ view }} · 查询「{{ filterQuery || '空' }}」 · 排序
           {{ sort }}
         </p>
+      </div>
+    </ExampleBlock>
+
+    <ExampleBlock
+      id="q-database-table"
+      title="QDatabaseTable"
+      description="在 Table 之上加选中与行操作"
+      :code="snippets.databaseTable"
+    >
+      <div class="w-full max-w-xl overflow-hidden rounded-md border border-border">
+        <QDatabaseTable
+          v-model:selected-id="dbSelected"
+          :columns="dbColumns"
+          :rows="dbRows"
+          @row-action="(row) => toast(`行操作：${row.cells.name}`)"
+        />
       </div>
     </ExampleBlock>
   </ExampleGalleryShell>

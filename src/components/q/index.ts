@@ -74,6 +74,11 @@ export { default as QSortMenu } from './QSortMenu.vue'
 export type { QSortOption } from './QSortMenu.vue'
 export { default as QViewTabs } from './QViewTabs.vue'
 export type { QViewTabItem } from './QViewTabs.vue'
+export { default as QDatabaseTable } from './QDatabaseTable.vue'
+export type {
+  QDatabaseColumn,
+  QDatabaseRow,
+} from './QDatabaseTable.vue'
 export { default as QCard } from './QCard.vue'
 export { default as QModal } from './QModal.vue'
 export { default as QDrawer } from './QDrawer.vue'

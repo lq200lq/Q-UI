@@ -127,7 +127,7 @@
 - [x] `QBoard` / `QBoardColumn` / `QBoardCard`
 - [x] `QProperty` — 文本 / 选择 / 多人 / 日期等属性渲染
 - [x] `QFilterBar` / `QSortMenu` / `QViewTabs`
-- [ ] `QDatabaseTable`（在 Table 之上加属性与行操作）
+- [x] `QDatabaseTable`（在 Table 之上加属性与行操作）
 
 ---
 
