@@ -40,6 +40,7 @@ import {
   QModal,
   QBreadcrumb,
   QBadge,
+  QDescriptionList,
   QEmpty,
   QList,
   QListItem,
@@ -203,6 +204,7 @@ const navItems = [
   { id: 'q-table', label: 'QTable' },
   { id: 'q-badge', label: 'QBadge · QTag' },
   { id: 'q-empty', label: 'QEmpty' },
+  { id: 'q-description-list', label: 'QDescriptionList' },
   { id: 'q-skeleton', label: 'QSkeleton' },
   { id: 'q-spinner', label: 'QSpinner' },
   { id: 'q-icon', label: 'QIcon' },
@@ -1244,6 +1246,30 @@ onUnmounted(() => {
           <QButton size="sm" variant="secondary" icon="plus">新建文档</QButton>
         </template>
       </QEmpty>
+    </ExampleBlock>
+
+    <ExampleBlock
+      id="q-description-list"
+      title="QDescriptionList"
+      description="键值描述；stacked / horizontal"
+      :code="snippets.descriptionList"
+    >
+      <div class="flex w-full max-w-md flex-col gap-6">
+        <QDescriptionList
+          layout="horizontal"
+          :items="[
+            { term: '状态', description: '已发布' },
+            { term: '更新', description: '2 小时前' },
+            { term: '所有者', description: 'Ada Lovelace' },
+          ]"
+        />
+        <QDescriptionList
+          :items="[
+            { term: '工作区', description: 'Dev902' },
+            { term: '计划', description: 'Pro' },
+          ]"
+        />
+      </div>
     </ExampleBlock>
 
     <ExampleBlock

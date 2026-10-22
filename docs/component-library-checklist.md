@@ -76,7 +76,7 @@
 - [x] `QList` / `QListItem`（文档列表、设置列表）
 - [x] `QSkeleton`
 - [ ] `QTree` / `QTreeItem`（目录树、页面树）
-- [ ] `QDescriptionList` — 键值描述列表
+- [x] `QDescriptionList` — 键值描述列表
 - [x] `QProgress` / `QProgressCircle`
 - [ ] `QStat` — 简单指标（慎用，避免仪表盘堆砌）
 

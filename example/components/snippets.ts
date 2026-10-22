@@ -359,6 +359,15 @@ export const spinner = `<QSpinner />
 <QSpinner size="lg" label="同步中" />
 <QButton :loading="true">Saving</QButton>`
 
+export const descriptionList = `<QDescriptionList
+  layout="horizontal"
+  :items="[
+    { term: '状态', description: '已发布' },
+    { term: '更新', description: '2 小时前' },
+    { term: '所有者', description: 'Ada Lovelace' },
+  ]"
+/>`
+
 export const badge = `<QBadge variant="success" dot>已发布</QBadge>
 <QBadge variant="warning">草稿</QBadge>
 <QBadge variant="info">审阅中</QBadge>

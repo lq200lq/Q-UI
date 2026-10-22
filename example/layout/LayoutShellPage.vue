@@ -14,6 +14,7 @@ import {
   QCommandPalette,
   QDrawer,
   QDropdownMenu,
+  QDescriptionList,
   QEmpty,
   QIcon,
   QIconButton,
@@ -945,22 +946,19 @@ function onCommandSelect(item: QCommandItem) {
             {{ activeDoc.status }}
           </QBadge>
         </div>
-        <dl class="space-y-3 text-sm">
-          <div>
-            <dt class="text-xs text-primary/50">更新</dt>
-            <dd class="mt-0.5 text-primary">{{ activeDoc.updated }}</dd>
-          </div>
-          <div>
-            <dt class="text-xs text-primary/50">摘要</dt>
-            <dd class="mt-0.5 text-primary/80">{{ activeDoc.description }}</dd>
-          </div>
-          <div>
-            <dt class="mb-1.5 text-xs text-primary/50">协作者</dt>
-            <dd>
-              <QAvatarGroup :items="members.slice(0, 3)" size="sm" />
-            </dd>
-          </div>
-        </dl>
+        <QDescriptionList
+          class="mb-4"
+          layout="horizontal"
+          :items="[
+            { term: '状态', description: activeDoc.status },
+            { term: '更新', description: activeDoc.updated },
+            { term: '摘要', description: activeDoc.description },
+          ]"
+        />
+        <div>
+          <p class="mb-1.5 text-xs font-medium text-primary/55">协作者</p>
+          <QAvatarGroup :items="members.slice(0, 3)" size="sm" />
+        </div>
       </template>
       <template #footer="{ close }">
         <QButton variant="secondary" size="sm" class="ml-auto" @click="close">
