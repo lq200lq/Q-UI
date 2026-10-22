@@ -151,7 +151,7 @@
 - [x] `QIcon` — 见独立文档 [`q-icon.md`](./q-icon.md)（已实现）
 - [x] 门户挂载点 — `index.html` → `#overlay-root`（`src/constants/overlay.ts`）
 - [x] 无障碍约定 — [`accessibility.md`](./accessibility.md)
-- [x] Story / Playground — `example/` 路由（`/example/components` 索引 · `core` / `forms` / `blocks` / `board` · `/example/icons`）
+- [x] Story / Playground — `example/` 路由（`/example/page` 页面示例 · `/example/layout` · `/example/components` 索引 · `core` / `forms` / `blocks` / `board` · `/example/icons`）
 
 ---
 

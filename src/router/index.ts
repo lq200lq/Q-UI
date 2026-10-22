@@ -45,5 +45,10 @@ export const router = createRouter({
       name: 'example-layout',
       component: () => import('../../example/layout/LayoutShellPage.vue'),
     },
+    {
+      path: '/example/page',
+      name: 'example-page',
+      component: () => import('../../example/page/PageDemoPage.vue'),
+    },
   ],
 })

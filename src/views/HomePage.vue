@@ -33,6 +33,16 @@ import { QIcon } from '../components/q'
       <ul class="space-y-1 text-sm">
         <li>
           <RouterLink
+            to="/example/page"
+            class="flex items-center gap-2 rounded-md px-2 py-1.5 text-primary transition-colors duration-150 hover:bg-hover"
+          >
+            <QIcon name="file-text" size="sm" class="text-accent-1" />
+            <span>页面示例</span>
+            <QIcon name="chevron-right" size="sm" class="ml-auto text-primary/40" />
+          </RouterLink>
+        </li>
+        <li>
+          <RouterLink
             to="/example/layout"
             class="flex items-center gap-2 rounded-md px-2 py-1.5 text-primary transition-colors duration-150 hover:bg-hover"
           >
