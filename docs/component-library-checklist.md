@@ -52,7 +52,7 @@
 - [x] `QDrawer`（侧栏面板；`QSheet` 可后续做底部变体）
 - [x] `QPopover`
 - [x] `QDropdownMenu`
-- [ ] `QContextMenu`（P1，Notion 右键感强）
+- [x] `QContextMenu`（Notion 右键感强）
 
 ---
 

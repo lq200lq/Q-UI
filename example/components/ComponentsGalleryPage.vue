@@ -20,6 +20,7 @@ import {
   QCommandPalette,
   QConfirmDialog,
   QDropdownMenu,
+  QContextMenu,
   QPopover,
   QPagination,
   QProgress,
@@ -150,6 +151,7 @@ const darkPreview = ref(false)
 const themePref = ref('system')
 const density = ref('comfortable')
 const lastMenu = ref('')
+const lastContext = ref('')
 const activeId = ref('')
 const tab = ref('overview')
 const tabPills = ref('all')
@@ -207,6 +209,7 @@ const navItems = [
   { id: 'q-confirm-dialog', label: 'QConfirmDialog' },
   { id: 'q-tooltip', label: 'QTooltip' },
   { id: 'q-dropdown-menu', label: 'QDropdownMenu' },
+  { id: 'q-context-menu', label: 'QContextMenu' },
   { id: 'q-popover', label: 'QPopover' },
   { id: 'q-progress', label: 'QProgress' },
   { id: 'q-pagination', label: 'QPagination' },
@@ -230,6 +233,13 @@ const menuItems: QDropdownItem[] = [
   { label: '删除', danger: true },
 ]
 
+const contextItems: QDropdownItem[] = [
+  { label: '打开' },
+  { label: '重命名' },
+  { separator: true, label: '' },
+  { label: '删除', danger: true },
+]
+
 function pretendSave() {
   loading.value = true
   window.setTimeout(() => {
@@ -246,6 +256,11 @@ function onConfirmDelete() {
 function onMenuSelect(item: QDropdownItem) {
   lastMenu.value = item.label
   toast(`选择了「${item.label}」`)
+}
+
+function onContextSelect(item: QDropdownItem) {
+  lastContext.value = item.label
+  toast(`右键：${item.label}`)
 }
 
 function scrollToSection(id: string) {
@@ -1033,6 +1048,26 @@ onUnmounted(() => {
         <span v-if="lastMenu" class="text-sm text-primary/60">
           最近选择：{{ lastMenu }}
         </span>
+      </div>
+    </ExampleBlock>
+
+    <ExampleBlock
+      id="q-context-menu"
+      title="QContextMenu"
+      description="右键打开；指针定位；Esc / 外侧关闭；方向键选择"
+      :code="snippets.contextMenu"
+    >
+      <div class="w-full max-w-md space-y-2">
+        <QContextMenu :items="contextItems" @select="onContextSelect">
+          <div
+            class="rounded-md border border-dashed border-border bg-surface-secondary/40 px-6 py-10 text-center text-sm text-primary/60"
+          >
+            在此区域右键打开菜单
+          </div>
+        </QContextMenu>
+        <p v-if="lastContext" class="text-sm text-primary/60">
+          最近选择：{{ lastContext }}
+        </p>
       </div>
     </ExampleBlock>
 

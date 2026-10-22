@@ -310,6 +310,20 @@ export const dropdown = `<QDropdownMenu
   </template>
 </QDropdownMenu>`
 
+export const contextMenu = `<QContextMenu
+  :items="[
+    { label: '打开' },
+    { label: '重命名' },
+    { separator: true, label: '' },
+    { label: '删除', danger: true },
+  ]"
+  @select="onSelect"
+>
+  <div class="rounded-md border border-dashed border-border p-8 text-center text-sm text-primary/60">
+    在此区域右键
+  </div>
+</QContextMenu>`
+
 export const tabs = `const tab = ref('overview')
 
 <QTabs
