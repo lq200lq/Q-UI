@@ -93,7 +93,7 @@
 ### 覆盖层进阶
 
 - [x] `QCommandPalette` — ⌘K 命令面板（工具产品高价值）
-- [ ] `QConfirmDialog` — 危险操作确认（基于 Modal）
+- [x] `QConfirmDialog` — 危险操作确认（基于 Modal；见上方已实现）
 - [ ] `QHoverCard`
 
 ---
