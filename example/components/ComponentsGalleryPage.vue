@@ -43,6 +43,7 @@ import {
   QBlockHandle,
   QBlock,
   QEditableTitle,
+  QInlineEditable,
   QIcon,
   QIconButton,
   QInput,
@@ -151,6 +152,7 @@ const uploadFiles = ref<QUploadFile[]>([])
 const volume = ref(42)
 const tagColor = ref<string | null>('#2383e2')
 const pageTitle = ref('产品规格')
+const cellStatus = ref('进行中')
 const mentionText = ref('请 @')
 const mentionOptions: QMentionOption[] = [
   { id: 'ada', label: 'Ada Lovelace', description: '工程' },
@@ -288,6 +290,7 @@ const navItems = [
   { id: 'q-block-handle', label: 'QBlockHandle' },
   { id: 'q-block', label: 'QBlock' },
   { id: 'q-editable-title', label: 'QEditableTitle' },
+  { id: 'q-inline-editable', label: 'QInlineEditable' },
   { id: 'q-textarea', label: 'QTextarea' },
   { id: 'q-select', label: 'QSelect' },
   { id: 'q-combobox', label: 'QCombobox' },
@@ -914,6 +917,18 @@ onUnmounted(() => {
     >
       <div class="w-full max-w-lg">
         <QEditableTitle v-model="pageTitle" placeholder="无标题" />
+      </div>
+    </ExampleBlock>
+
+    <ExampleBlock
+      id="q-inline-editable"
+      title="QInlineEditable"
+      description="单元格 / 属性就地编辑"
+      :code="snippets.inlineEditable"
+    >
+      <div class="flex items-center gap-3 text-sm text-primary/70">
+        <span>状态</span>
+        <QInlineEditable v-model="cellStatus" empty-label="设置状态" />
       </div>
     </ExampleBlock>
 

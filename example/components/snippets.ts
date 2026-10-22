@@ -144,6 +144,8 @@ export const block = `<QBlock>
 
 export const editableTitle = `<QEditableTitle v-model="title" placeholder="无标题" />`
 
+export const inlineEditable = `<QInlineEditable v-model="status" empty-label="设置状态" />`
+
 export const mentionInput = `<QMentionInput
   v-model="comment"
   :options="[
