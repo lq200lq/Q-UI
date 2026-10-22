@@ -6,6 +6,7 @@ import {
   QAvatar,
   QAvatarGroup,
   QText,
+  QHeading,
   QButton,
   QCallout,
   QCard,
@@ -160,6 +161,7 @@ const crumbs: QBreadcrumbItem[] = [
 
 const navItems = [
   { id: 'q-text', label: 'QText' },
+  { id: 'q-heading', label: 'QHeading' },
   { id: 'q-button-variants', label: 'QButton · 变体' },
   { id: 'q-button-states', label: 'QButton · 尺寸与状态' },
   { id: 'q-icon-button', label: 'QIconButton' },
@@ -359,6 +361,20 @@ onUnmounted(() => {
         <QText truncate class="max-w-xs">
           超长文本会被截断：这是一段用来演示 truncate 的很长很长的句子。
         </QText>
+      </div>
+    </ExampleBlock>
+
+    <ExampleBlock
+      id="q-heading"
+      title="QHeading"
+      description="h1–h4；可用 size 覆盖视觉层级"
+      :code="snippets.heading"
+    >
+      <div class="flex w-full max-w-lg flex-col gap-3">
+        <QHeading :level="1">页面标题</QHeading>
+        <QHeading :level="2">区块标题</QHeading>
+        <QHeading :level="3">小节标题</QHeading>
+        <QHeading :level="4" muted>次级标题</QHeading>
       </div>
     </ExampleBlock>
 

@@ -1,5 +1,6 @@
 export { default as QIcon } from './QIcon.vue'
 export { default as QText } from './QText.vue'
+export { default as QHeading } from './QHeading.vue'
 export { default as QButton } from './QButton.vue'
 export { default as QIconButton } from './QIconButton.vue'
 export { default as QKbd } from './QKbd.vue'

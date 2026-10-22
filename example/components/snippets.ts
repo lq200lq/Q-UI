@@ -6,6 +6,11 @@ export const text = `<QText>正文段落，用于说明与正文内容。</QText
 <QText variant="lead">引导句，稍大一号。</QText>
 <QText variant="code">token.primary</QText>`
 
+export const heading = `<QHeading :level="1">页面标题</QHeading>
+<QHeading :level="2">区块标题</QHeading>
+<QHeading :level="3">小节标题</QHeading>
+<QHeading :level="4" muted>次级标题</QHeading>`
+
 export const buttonVariants = `<QButton variant="primary">Primary</QButton>
 <QButton variant="secondary">Secondary</QButton>
 <QButton variant="outline">Outline</QButton>
