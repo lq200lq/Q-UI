@@ -33,6 +33,7 @@ import {
   QDatePicker,
   QDateRangePicker,
   type QDateRange,
+  QTimePicker,
   QIcon,
   QIconButton,
   QInput,
@@ -136,6 +137,7 @@ const onDemoFormSubmit = handleDemoForm(async (values) => {
 
 const dueDate = ref<string | null>('2026-10-22')
 const dateRange = ref<QDateRange>({ start: '2026-10-01', end: '2026-10-15' })
+const startTime = ref<string | null>('09:30')
 
 const page = ref(1)
 const step = ref('team')
@@ -258,6 +260,7 @@ const navItems = [
   { id: 'q-field-input', label: 'QInput · QField' },
   { id: 'q-form', label: 'QForm' },
   { id: 'q-date-picker', label: 'QDatePicker' },
+  { id: 'q-time-picker', label: 'QTimePicker' },
   { id: 'q-textarea', label: 'QTextarea' },
   { id: 'q-select', label: 'QSelect' },
   { id: 'q-combobox', label: 'QCombobox' },
@@ -759,6 +762,22 @@ onUnmounted(() => {
         <p class="text-xs text-primary/55">
           单日 {{ dueDate ?? '空' }} · 范围
           {{ dateRange.start ?? '…' }} → {{ dateRange.end ?? '…' }}
+        </p>
+      </div>
+    </ExampleBlock>
+
+    <ExampleBlock
+      id="q-time-picker"
+      title="QTimePicker"
+      description="时 / 分滚轮；可配置分钟步长；HH:mm"
+      :code="snippets.timePicker"
+    >
+      <div class="w-full max-w-xs">
+        <QField label="开始时间">
+          <QTimePicker v-model="startTime" :minute-step="5" />
+        </QField>
+        <p class="mt-2 text-xs text-primary/55">
+          当前：{{ startTime ?? '空' }}
         </p>
       </div>
     </ExampleBlock>

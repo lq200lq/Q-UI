@@ -121,6 +121,10 @@ export const datePicker = `<QField label="截止日期">
   <QDateRangePicker v-model="range" />
 </QField>`
 
+export const timePicker = `<QField label="开始时间">
+  <QTimePicker v-model="startTime" :minute-step="5" />
+</QField>`
+
 export const form = `const { values, errors, submitting, handleSubmit } = useForm({
   initialValues: { name: '', email: '' },
   rules: {
