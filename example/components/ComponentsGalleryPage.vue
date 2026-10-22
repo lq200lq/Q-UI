@@ -10,6 +10,7 @@ import {
   QContainer,
   QStack,
   QInline,
+  QDivider,
   QButton,
   QCallout,
   QCard,
@@ -167,6 +168,7 @@ const navItems = [
   { id: 'q-heading', label: 'QHeading' },
   { id: 'q-container', label: 'QContainer' },
   { id: 'q-stack-inline', label: 'QStack · QInline' },
+  { id: 'q-divider', label: 'QDivider' },
   { id: 'q-button-variants', label: 'QButton · 变体' },
   { id: 'q-button-states', label: 'QButton · 尺寸与状态' },
   { id: 'q-icon-button', label: 'QIconButton' },
@@ -413,6 +415,25 @@ onUnmounted(() => {
           <QButton size="sm">保存</QButton>
           <QButton size="sm" variant="secondary">取消</QButton>
           <QBadge variant="info">草稿</QBadge>
+        </QInline>
+      </div>
+    </ExampleBlock>
+
+    <ExampleBlock
+      id="q-divider"
+      title="QDivider"
+      description="水平 / 垂直；可选中间标签"
+      :code="snippets.divider"
+    >
+      <div class="flex w-full max-w-md flex-col">
+        <QText>上方内容</QText>
+        <QDivider />
+        <QText>下方内容</QText>
+        <QDivider label="或者" />
+        <QInline gap="md" class="h-8">
+          <QText variant="caption">左</QText>
+          <QDivider orientation="vertical" />
+          <QText variant="caption">右</QText>
         </QInline>
       </div>
     </ExampleBlock>

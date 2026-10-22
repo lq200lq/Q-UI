@@ -26,6 +26,11 @@ export const stackInline = `<QStack gap="md">
   <QButton size="sm" variant="secondary">取消</QButton>
 </QInline>`
 
+export const divider = `<QText>上方内容</QText>
+<QDivider />
+<QText>下方内容</QText>
+<QDivider label="或者" />`
+
 export const buttonVariants = `<QButton variant="primary">Primary</QButton>
 <QButton variant="secondary">Secondary</QButton>
 <QButton variant="outline">Outline</QButton>
