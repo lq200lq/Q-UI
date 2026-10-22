@@ -134,6 +134,15 @@ export const popover = `<QPopover v-model:open="open" title="分享" closable pl
   </template>
 </QPopover>`
 
+export const hoverCard = `<QHoverCard title="Ada Lovelace" placement="bottom">
+  <template #trigger>
+    <button type="button" class="text-sm text-btn underline-offset-2 hover:underline">
+      @ada
+    </button>
+  </template>
+  <p class="text-sm text-primary/70">数学家与早期程序员。关注计算与算法。</p>
+</QHoverCard>`
+
 export const progress = `<QProgress label="存储空间" :value="72" show-value />
 <QProgress :value="40" variant="success" size="sm" />
 <QProgress indeterminate label="同步中" />

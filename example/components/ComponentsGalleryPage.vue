@@ -22,6 +22,7 @@ import {
   QDropdownMenu,
   QContextMenu,
   QPopover,
+  QHoverCard,
   QPagination,
   QStepper,
   type QStepperItem,
@@ -243,6 +244,7 @@ const navItems = [
   { id: 'q-dropdown-menu', label: 'QDropdownMenu' },
   { id: 'q-context-menu', label: 'QContextMenu' },
   { id: 'q-popover', label: 'QPopover' },
+  { id: 'q-hover-card', label: 'QHoverCard' },
   { id: 'q-progress', label: 'QProgress' },
   { id: 'q-pagination', label: 'QPagination' },
   { id: 'q-stepper', label: 'QStepper' },
@@ -1142,6 +1144,33 @@ onUnmounted(() => {
           </QButton>
         </template>
       </QPopover>
+    </ExampleBlock>
+
+    <ExampleBlock
+      id="q-hover-card"
+      title="QHoverCard"
+      description="悬停打开；延迟开关；可移入卡片保持"
+      :code="snippets.hoverCard"
+    >
+      <QHoverCard title="Ada Lovelace" placement="bottom">
+        <template #trigger>
+          <button
+            type="button"
+            class="rounded-sm text-sm text-btn underline-offset-2 transition-colors duration-150 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-btn/40"
+          >
+            @ada
+          </button>
+        </template>
+        <div class="flex items-start gap-3">
+          <QAvatar name="Ada Lovelace" size="md" />
+          <div class="min-w-0">
+            <p class="text-sm font-medium text-primary">Ada Lovelace</p>
+            <p class="mt-1 text-xs text-primary/60">
+              数学家与早期程序员。关注计算与算法。
+            </p>
+          </div>
+        </div>
+      </QHoverCard>
     </ExampleBlock>
 
     <ExampleBlock
