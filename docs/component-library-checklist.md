@@ -34,7 +34,7 @@
 - [x] `QRadio` / `QRadioGroup`
 - [x] `QSwitch`
 - [x] `QSelect`（轻量自定义 listbox）
-- [ ] `QCombobox` / 可搜索选择（P1 也可）
+- [x] `QCombobox` / 可搜索选择
 
 ### 反馈
 

@@ -114,6 +114,14 @@ export const select = `<QField label="默认语言">
   />
 </QField>`
 
+export const combobox = `<QField label="负责人">
+  <QCombobox
+    v-model="assignee"
+    placeholder="搜索成员…"
+    :options="memberOptions"
+  />
+</QField>`
+
 export const popover = `<QPopover v-model:open="open" title="分享" closable placement="bottom" align="end">
   <template #trigger="{ toggle }">
     <QButton size="sm" variant="outline" @click="toggle">分享</QButton>

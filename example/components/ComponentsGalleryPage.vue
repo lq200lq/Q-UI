@@ -30,6 +30,7 @@ import {
   QInput,
   QKbd,
   QSelect,
+  QCombobox,
   QTextarea,
   type QSelectOption,
   QRadio,
@@ -85,6 +86,15 @@ const roleOptions: QSelectOption[] = [
   { value: 'owner', label: '所有者' },
   { value: 'editor', label: '编辑者' },
   { value: 'viewer', label: '查看者' },
+]
+
+const assignee = ref<string | number | null>('ada')
+const memberOptions: QSelectOption[] = [
+  { value: 'ada', label: 'Ada Lovelace' },
+  { value: 'alan', label: 'Alan Turing' },
+  { value: 'grace', label: 'Grace Hopper' },
+  { value: 'linus', label: 'Linus Torvalds' },
+  { value: 'kate', label: 'Katherine Johnson' },
 ]
 const loading = ref(false)
 const modalOpen = ref(false)
@@ -183,6 +193,7 @@ const navItems = [
   { id: 'q-field-input', label: 'QInput · QField' },
   { id: 'q-textarea', label: 'QTextarea' },
   { id: 'q-select', label: 'QSelect' },
+  { id: 'q-combobox', label: 'QCombobox' },
   { id: 'q-search', label: 'QSearch' },
   { id: 'q-callout', label: 'QCallout · QAlert' },
   { id: 'q-checkbox-switch', label: 'QCheckbox · QSwitch' },
@@ -652,6 +663,23 @@ onUnmounted(() => {
           disabled
           :options="localeOptions"
         />
+      </div>
+    </ExampleBlock>
+
+    <ExampleBlock
+      id="q-combobox"
+      title="QCombobox"
+      description="可搜索选择；键盘导航、清空、Teleport 列表"
+      :code="snippets.combobox"
+    >
+      <div class="w-full max-w-sm">
+        <QField label="负责人" description="输入关键字过滤成员">
+          <QCombobox
+            v-model="assignee"
+            placeholder="搜索成员…"
+            :options="memberOptions"
+          />
+        </QField>
       </div>
     </ExampleBlock>
 
