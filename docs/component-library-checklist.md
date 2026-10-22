@@ -83,7 +83,7 @@
 ### 表单增强
 
 - [x] `QForm` — 与 `useForm` / `formRules` 的薄封装（自研校验）
-- [ ] `QDatePicker` / `QDateRangePicker`
+- [x] `QDatePicker` / `QDateRangePicker`
 - [ ] `QTimePicker`
 - [ ] `QFileUpload` / `QDropzone`
 - [ ] `QSlider`

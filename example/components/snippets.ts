@@ -114,6 +114,13 @@ export const select = `<QField label="默认语言">
   />
 </QField>`
 
+export const datePicker = `<QField label="截止日期">
+  <QDatePicker v-model="dueDate" placeholder="选择日期" />
+</QField>
+<QField label="周期">
+  <QDateRangePicker v-model="range" />
+</QField>`
+
 export const form = `const { values, errors, submitting, handleSubmit } = useForm({
   initialValues: { name: '', email: '' },
   rules: {

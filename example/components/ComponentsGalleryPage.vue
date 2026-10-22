@@ -30,6 +30,9 @@ import {
   QProgressCircle,
   QField,
   QForm,
+  QDatePicker,
+  QDateRangePicker,
+  type QDateRange,
   QIcon,
   QIconButton,
   QInput,
@@ -130,6 +133,9 @@ const onDemoFormSubmit = handleDemoForm(async (values) => {
     variant: 'success',
   })
 })
+
+const dueDate = ref<string | null>('2026-10-22')
+const dateRange = ref<QDateRange>({ start: '2026-10-01', end: '2026-10-15' })
 
 const page = ref(1)
 const step = ref('team')
@@ -251,6 +257,7 @@ const navItems = [
   { id: 'q-kbd', label: 'QKbd' },
   { id: 'q-field-input', label: 'QInput · QField' },
   { id: 'q-form', label: 'QForm' },
+  { id: 'q-date-picker', label: 'QDatePicker' },
   { id: 'q-textarea', label: 'QTextarea' },
   { id: 'q-select', label: 'QSelect' },
   { id: 'q-combobox', label: 'QCombobox' },
@@ -734,6 +741,26 @@ onUnmounted(() => {
           </QButton>
         </div>
       </QForm>
+    </ExampleBlock>
+
+    <ExampleBlock
+      id="q-date-picker"
+      title="QDatePicker · QDateRangePicker"
+      description="日历浮层；ISO 日期；范围点选与预览"
+      :code="snippets.datePicker"
+    >
+      <div class="flex w-full max-w-sm flex-col gap-5">
+        <QField label="截止日期">
+          <QDatePicker v-model="dueDate" placeholder="选择日期" />
+        </QField>
+        <QField label="周期">
+          <QDateRangePicker v-model="dateRange" />
+        </QField>
+        <p class="text-xs text-primary/55">
+          单日 {{ dueDate ?? '空' }} · 范围
+          {{ dateRange.start ?? '…' }} → {{ dateRange.end ?? '…' }}
+        </p>
+      </div>
     </ExampleBlock>
 
     <ExampleBlock
