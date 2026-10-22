@@ -115,7 +115,7 @@
 - [x] `QCalloutBlock`（复用 QCallout + 可换 emoji）
 - [x] `QToggle` / 折叠块
 - [x] `QQuote`
-- [ ] `QCodeBlock` + 复制按钮
+- [x] `QCodeBlock` + 复制按钮
 - [ ] `QBookmark` / 链接预览卡
 - [ ] `QEmbed`（可选）
 - [ ] `QImageBlock` / `QVideoBlock`

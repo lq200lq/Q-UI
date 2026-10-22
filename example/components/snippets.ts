@@ -179,6 +179,8 @@ export const quote = `<QQuote cite="— Ada Lovelace">
   诗意科学将把我们带到多远。
 </QQuote>`
 
+export const codeBlock = `<QCodeBlock language="ts" :code="sample" />`
+
 export const mentionInput = `<QMentionInput
   v-model="comment"
   :options="[

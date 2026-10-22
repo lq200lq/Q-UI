@@ -53,6 +53,7 @@ import {
   QCalloutBlock,
   QToggle,
   QQuote,
+  QCodeBlock,
   QIcon,
   QIconButton,
   QInput,
@@ -210,6 +211,9 @@ const coverSrc = ref(
 )
 const pageEmoji = ref('📄')
 const toggleOpen = ref(true)
+const sampleCode = `function greet(name: string) {
+  return \`Hello, \${name}\`
+}`
 const mentionText = ref('请 @')
 const mentionOptions: QMentionOption[] = [
   { id: 'ada', label: 'Ada Lovelace', description: '工程' },
@@ -354,6 +358,7 @@ const navItems = [
   { id: 'q-callout-block', label: 'QCalloutBlock' },
   { id: 'q-toggle', label: 'QToggle' },
   { id: 'q-quote', label: 'QQuote' },
+  { id: 'q-code-block', label: 'QCodeBlock' },
   { id: 'q-textarea', label: 'QTextarea' },
   { id: 'q-select', label: 'QSelect' },
   { id: 'q-combobox', label: 'QCombobox' },
@@ -1093,6 +1098,30 @@ onUnmounted(() => {
         <QToggle v-model:open="toggleOpen" title="展开查看详情">
           这里是折叠块内容，适合放补充说明或次要段落。
         </QToggle>
+      </div>
+    </ExampleBlock>
+
+    <ExampleBlock
+      id="q-quote"
+      title="QQuote"
+      description="引用块；左侧细线分隔"
+      :code="snippets.quote"
+    >
+      <div class="w-full max-w-lg">
+        <QQuote cite="— Ada Lovelace">
+          诗意科学将把我们带到多远。
+        </QQuote>
+      </div>
+    </ExampleBlock>
+
+    <ExampleBlock
+      id="q-code-block"
+      title="QCodeBlock"
+      description="代码块；一键复制"
+      :code="snippets.codeBlock"
+    >
+      <div class="w-full max-w-lg">
+        <QCodeBlock language="ts" :code="sampleCode" />
       </div>
     </ExampleBlock>
 
