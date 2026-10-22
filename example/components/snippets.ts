@@ -138,6 +138,10 @@ export const colorSwatch = `<QColorSwatch v-model="tagColor" />`
 
 export const blockHandle = `<QBlockHandle @pointerdown="onDragStart" />`
 
+export const block = `<QBlock>
+  <p class="text-sm text-primary">这是一个文档块。悬停显示左侧手柄。</p>
+</QBlock>`
+
 export const mentionInput = `<QMentionInput
   v-model="comment"
   :options="[

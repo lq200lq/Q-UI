@@ -41,6 +41,7 @@ import {
   QMentionInput,
   type QMentionOption,
   QBlockHandle,
+  QBlock,
   QIcon,
   QIconButton,
   QInput,
@@ -283,6 +284,7 @@ const navItems = [
   { id: 'q-color-swatch', label: 'QColorSwatch' },
   { id: 'q-mention-input', label: 'QMentionInput' },
   { id: 'q-block-handle', label: 'QBlockHandle' },
+  { id: 'q-block', label: 'QBlock' },
   { id: 'q-textarea', label: 'QTextarea' },
   { id: 'q-select', label: 'QSelect' },
   { id: 'q-combobox', label: 'QCombobox' },
@@ -878,6 +880,26 @@ onUnmounted(() => {
       <div class="flex items-center gap-2 rounded-md border border-border px-3 py-2">
         <QBlockHandle />
         <span class="text-sm text-primary/70">悬停块左侧会出现此手柄</span>
+      </div>
+    </ExampleBlock>
+
+    <ExampleBlock
+      id="q-block"
+      title="QBlock"
+      description="块容器；hover 高亮；左侧拖拽手柄"
+      :code="snippets.block"
+    >
+      <div class="ml-8 w-full max-w-lg space-y-1">
+        <QBlock>
+          <p class="text-sm leading-relaxed text-primary">
+            这是一个文档块。悬停显示左侧手柄。
+          </p>
+        </QBlock>
+        <QBlock selected>
+          <p class="text-sm leading-relaxed text-primary">
+            选中态块会保留高亮与手柄。
+          </p>
+        </QBlock>
       </div>
     </ExampleBlock>
 
