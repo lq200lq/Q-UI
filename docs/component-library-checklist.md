@@ -124,7 +124,7 @@
 
 ### 看板 / 数据库感（若产品需要）
 
-- [ ] `QBoard` / `QBoardColumn` / `QBoardCard`
+- [x] `QBoard` / `QBoardColumn` / `QBoardCard`
 - [ ] `QProperty` — 文本 / 选择 / 多人 / 日期等属性渲染
 - [ ] `QFilterBar` / `QSortMenu` / `QViewTabs`
 - [ ] `QDatabaseTable`（在 Table 之上加属性与行操作）

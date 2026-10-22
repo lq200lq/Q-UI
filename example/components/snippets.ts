@@ -210,6 +210,15 @@ export const toc = `<QToc
   active-id="setup"
 />`
 
+export const board = `<QBoard>
+  <QBoardColumn title="待办" :count="2">
+    <QBoardCard title="写规格" description="补齐验收标准" />
+  </QBoardColumn>
+  <QBoardColumn title="进行中" :count="1">
+    <QBoardCard title="组件库" />
+  </QBoardColumn>
+</QBoard>`
+
 export const mentionInput = `<QMentionInput
   v-model="comment"
   :options="[
