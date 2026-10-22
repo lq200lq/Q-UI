@@ -40,6 +40,7 @@ import {
   QColorSwatch,
   QMentionInput,
   type QMentionOption,
+  QBlockHandle,
   QIcon,
   QIconButton,
   QInput,
@@ -281,6 +282,7 @@ const navItems = [
   { id: 'q-slider', label: 'QSlider' },
   { id: 'q-color-swatch', label: 'QColorSwatch' },
   { id: 'q-mention-input', label: 'QMentionInput' },
+  { id: 'q-block-handle', label: 'QBlockHandle' },
   { id: 'q-textarea', label: 'QTextarea' },
   { id: 'q-select', label: 'QSelect' },
   { id: 'q-combobox', label: 'QCombobox' },
@@ -864,6 +866,18 @@ onUnmounted(() => {
             :options="mentionOptions"
           />
         </QField>
+      </div>
+    </ExampleBlock>
+
+    <ExampleBlock
+      id="q-block-handle"
+      title="QBlockHandle"
+      description="Drag Handle Illusion；grab 光标"
+      :code="snippets.blockHandle"
+    >
+      <div class="flex items-center gap-2 rounded-md border border-border px-3 py-2">
+        <QBlockHandle />
+        <span class="text-sm text-primary/70">悬停块左侧会出现此手柄</span>
       </div>
     </ExampleBlock>
 

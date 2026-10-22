@@ -136,6 +136,8 @@ export const slider = `<QSlider v-model="volume" label="音量" show-value :max=
 
 export const colorSwatch = `<QColorSwatch v-model="tagColor" />`
 
+export const blockHandle = `<QBlockHandle @pointerdown="onDragStart" />`
+
 export const mentionInput = `<QMentionInput
   v-model="comment"
   :options="[

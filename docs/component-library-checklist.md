@@ -103,7 +103,7 @@
 ### 块与编辑体验
 
 - [ ] `QBlock` — 块容器（hover 高亮、左侧拖拽手柄 ⋮⋮）
-- [ ] `QBlockHandle` — Drag Handle Illusion
+- [x] `QBlockHandle` — Drag Handle Illusion
 - [ ] `QEditableTitle` — 页面标题就地编辑
 - [ ] `QInlineEditable` — 单元格 / 属性就地编辑
 - [ ] `QSlashMenu` — `/` 命令菜单

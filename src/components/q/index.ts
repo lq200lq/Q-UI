@@ -39,6 +39,7 @@ export {
 } from './colorSwatch'
 export { default as QMentionInput } from './QMentionInput.vue'
 export type { QMentionOption } from './QMentionInput.vue'
+export { default as QBlockHandle } from './QBlockHandle.vue'
 export { default as QCard } from './QCard.vue'
 export { default as QModal } from './QModal.vue'
 export { default as QDrawer } from './QDrawer.vue'
