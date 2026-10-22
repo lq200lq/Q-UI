@@ -21,6 +21,7 @@ import {
   QEmbed,
   QImageBlock,
   QVideoBlock,
+  QDividerBlock,
 } from '../../src/components/q'
 import { toast } from '../../src/composables'
 import ExampleBlock from '../_shared/ExampleBlock.vue'
@@ -120,6 +121,7 @@ const navItems = [
   { id: 'q-bookmark', label: 'QBookmark' },
   { id: 'q-embed', label: 'QEmbed' },
   { id: 'q-media-blocks', label: 'QImage · QVideo' },
+  { id: 'q-divider-block', label: 'QDividerBlock' },
 ] as const
 </script>
 
@@ -355,6 +357,20 @@ const navItems = [
           src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
           caption="视频块示意（示例素材）"
         />
+      </div>
+    </ExampleBlock>
+
+    <ExampleBlock
+      id="q-divider-block"
+      title="QDividerBlock"
+      description="窄 / 全宽分隔块"
+      :code="snippets.dividerBlock"
+    >
+      <div class="w-full space-y-2">
+        <p class="text-xs text-primary/50">narrow</p>
+        <QDividerBlock width="narrow" />
+        <p class="text-xs text-primary/50">full</p>
+        <QDividerBlock width="full" />
       </div>
     </ExampleBlock>
   </ExampleGalleryShell>

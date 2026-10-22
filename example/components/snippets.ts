@@ -198,6 +198,9 @@ export const mediaBlocks = `<QImageBlock
 />
 <QVideoBlock src="/demo.mp4" caption="演示视频" />`
 
+export const dividerBlock = `<QDividerBlock width="narrow" />
+<QDividerBlock width="full" />`
+
 export const mentionInput = `<QMentionInput
   v-model="comment"
   :options="[
