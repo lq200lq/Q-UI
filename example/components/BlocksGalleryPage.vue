@@ -18,6 +18,7 @@ import {
   type QSlashMenuItem,
   QToggle,
   QBookmark,
+  QEmbed,
 } from '../../src/components/q'
 import { toast } from '../../src/composables'
 import ExampleBlock from '../_shared/ExampleBlock.vue'
@@ -115,6 +116,7 @@ const navItems = [
   { id: 'q-quote', label: 'QQuote' },
   { id: 'q-code-block', label: 'QCodeBlock' },
   { id: 'q-bookmark', label: 'QBookmark' },
+  { id: 'q-embed', label: 'QEmbed' },
 ] as const
 </script>
 
@@ -316,6 +318,20 @@ const navItems = [
           title="Notion"
           description="The AI workspace that works for you."
           image="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=400&q=80"
+        />
+      </div>
+    </ExampleBlock>
+
+    <ExampleBlock
+      id="q-embed"
+      title="QEmbed"
+      description="iframe 嵌入；可配置宽高比"
+      :code="snippets.embed"
+    >
+      <div class="w-full max-w-lg">
+        <QEmbed
+          src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ"
+          title="示例嵌入"
         />
       </div>
     </ExampleBlock>

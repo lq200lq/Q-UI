@@ -117,7 +117,7 @@
 - [x] `QQuote`
 - [x] `QCodeBlock` + 复制按钮
 - [x] `QBookmark` / 链接预览卡
-- [ ] `QEmbed`（可选）
+- [x] `QEmbed`
 - [ ] `QImageBlock` / `QVideoBlock`
 - [ ] `QDividerBlock`（含「窄/全宽」）
 - [ ] `QToc` — 目录

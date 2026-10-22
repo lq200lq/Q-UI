@@ -187,6 +187,11 @@ export const bookmark = `<QBookmark
   description="All-in-one workspace"
 />`
 
+export const embed = `<QEmbed
+  src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+  title="示例视频"
+/>`
+
 export const mentionInput = `<QMentionInput
   v-model="comment"
   :options="[
