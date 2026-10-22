@@ -113,7 +113,7 @@
 ### 内容块
 
 - [x] `QCalloutBlock`（复用 QCallout + 可换 emoji）
-- [ ] `QToggle` / 折叠块
+- [x] `QToggle` / 折叠块
 - [ ] `QQuote`
 - [ ] `QCodeBlock` + 复制按钮
 - [ ] `QBookmark` / 链接预览卡

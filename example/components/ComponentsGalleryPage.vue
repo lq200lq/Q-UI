@@ -51,6 +51,7 @@ import {
   QCover,
   QPageIcon,
   QCalloutBlock,
+  QToggle,
   QIcon,
   QIconButton,
   QInput,
@@ -207,6 +208,7 @@ const coverSrc = ref(
   'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200&q=80',
 )
 const pageEmoji = ref('📄')
+const toggleOpen = ref(true)
 const mentionText = ref('请 @')
 const mentionOptions: QMentionOption[] = [
   { id: 'ada', label: 'Ada Lovelace', description: '工程' },
@@ -349,6 +351,7 @@ const navItems = [
   { id: 'q-block-toolbar', label: 'QBlockToolbar' },
   { id: 'q-cover', label: 'QCover · QPageIcon' },
   { id: 'q-callout-block', label: 'QCalloutBlock' },
+  { id: 'q-toggle', label: 'QToggle' },
   { id: 'q-textarea', label: 'QTextarea' },
   { id: 'q-select', label: 'QSelect' },
   { id: 'q-combobox', label: 'QCombobox' },
@@ -1075,6 +1078,19 @@ onUnmounted(() => {
         >
           文档块式 callout，点击左侧 emoji 可更换。
         </QCalloutBlock>
+      </div>
+    </ExampleBlock>
+
+    <ExampleBlock
+      id="q-toggle"
+      title="QToggle"
+      description="折叠块（非开关；开关见 QSwitch）"
+      :code="snippets.toggle"
+    >
+      <div class="w-full max-w-lg">
+        <QToggle v-model:open="toggleOpen" title="展开查看详情">
+          这里是折叠块内容，适合放补充说明或次要段落。
+        </QToggle>
       </div>
     </ExampleBlock>
 

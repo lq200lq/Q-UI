@@ -171,6 +171,10 @@ export const calloutBlock = `<QCalloutBlock emoji="💡" title="提示">
   文档块式 callout，可更换 emoji。
 </QCalloutBlock>`
 
+export const toggle = `<QToggle v-model:open="open" title="展开查看详情">
+  折叠块内容。
+</QToggle>`
+
 export const mentionInput = `<QMentionInput
   v-model="comment"
   :options="[
