@@ -147,7 +147,7 @@
 
 ### 基础设施
 
-- [ ] 主题 tokens 文档（对应 `src/themes/`）
+- [x] 主题 tokens 文档（对应 `src/themes/`）→ [`theme-tokens.md`](./theme-tokens.md)
 - [x] `QIcon` — 见独立文档 [`q-icon.md`](./q-icon.md)（已实现）
 - [x] 门户挂载点 — `index.html` → `#overlay-root`（`src/constants/overlay.ts`）
 - [x] 无障碍约定 — [`accessibility.md`](./accessibility.md)
