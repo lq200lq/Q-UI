@@ -82,7 +82,7 @@
 
 ### 表单增强
 
-- [ ] `QForm` — 与校验库（如 VeeValidate / 自研）的薄封装
+- [x] `QForm` — 与 `useForm` / `formRules` 的薄封装（自研校验）
 - [ ] `QDatePicker` / `QDateRangePicker`
 - [ ] `QTimePicker`
 - [ ] `QFileUpload` / `QDropzone`

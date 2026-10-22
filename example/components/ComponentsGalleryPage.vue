@@ -29,6 +29,7 @@ import {
   QProgress,
   QProgressCircle,
   QField,
+  QForm,
   QIcon,
   QIconButton,
   QInput,
@@ -68,7 +69,7 @@ import {
   type QDropdownItem,
   type QTabItem,
 } from '../../src/components/q'
-import { toast } from '../../src/composables'
+import { formRules, toast, useForm } from '../../src/composables'
 import ExampleBlock from '../_shared/ExampleBlock.vue'
 import * as snippets from './snippets'
 
@@ -107,6 +108,29 @@ const modalOpen = ref(false)
 const drawerOpen = ref(false)
 const commandOpen = ref(false)
 const popoverOpen = ref(false)
+const {
+  values: formValues,
+  errors: formErrors,
+  submitting: formSubmitting,
+  handleSubmit: handleDemoForm,
+  reset: resetDemoForm,
+} = useForm({
+  initialValues: { name: '', email: '' },
+  rules: {
+    name: formRules.required('请填写名称'),
+    email: [formRules.required(), formRules.email()],
+  },
+})
+
+const onDemoFormSubmit = handleDemoForm(async (values) => {
+  await new Promise((r) => window.setTimeout(r, 600))
+  toast({
+    title: '表单已提交',
+    description: `${values.name} · ${values.email}`,
+    variant: 'success',
+  })
+})
+
 const page = ref(1)
 const step = ref('team')
 const stepperItems: QStepperItem[] = [
@@ -226,6 +250,7 @@ const navItems = [
   { id: 'q-icon-button', label: 'QIconButton' },
   { id: 'q-kbd', label: 'QKbd' },
   { id: 'q-field-input', label: 'QInput · QField' },
+  { id: 'q-form', label: 'QForm' },
   { id: 'q-textarea', label: 'QTextarea' },
   { id: 'q-select', label: 'QSelect' },
   { id: 'q-combobox', label: 'QCombobox' },
@@ -657,6 +682,58 @@ onUnmounted(() => {
           />
         </QField>
       </div>
+    </ExampleBlock>
+
+    <ExampleBlock
+      id="q-form"
+      title="QForm · useForm"
+      description="表单壳 + 自研校验；提交时校验并展示字段错误"
+      :code="snippets.form"
+    >
+      <QForm class="max-w-sm" @submit="onDemoFormSubmit">
+        <QField
+          v-slot="{ id, describedBy, invalid }"
+          label="名称"
+          required
+          :error="formErrors.name"
+        >
+          <QInput
+            :id="id"
+            v-model="formValues.name"
+            :aria-describedby="describedBy"
+            :invalid="invalid"
+            placeholder="例如：Ada"
+          />
+        </QField>
+        <QField
+          v-slot="{ id, describedBy, invalid }"
+          label="邮箱"
+          required
+          :error="formErrors.email"
+        >
+          <QInput
+            :id="id"
+            v-model="formValues.email"
+            type="email"
+            :aria-describedby="describedBy"
+            :invalid="invalid"
+            placeholder="you@example.com"
+          />
+        </QField>
+        <div class="flex items-center gap-2">
+          <QButton type="submit" :loading="formSubmitting">
+            保存
+          </QButton>
+          <QButton
+            type="button"
+            variant="secondary"
+            size="sm"
+            @click="resetDemoForm()"
+          >
+            重置
+          </QButton>
+        </div>
+      </QForm>
     </ExampleBlock>
 
     <ExampleBlock

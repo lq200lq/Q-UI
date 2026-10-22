@@ -114,6 +114,28 @@ export const select = `<QField label="默认语言">
   />
 </QField>`
 
+export const form = `const { values, errors, submitting, handleSubmit } = useForm({
+  initialValues: { name: '', email: '' },
+  rules: {
+    name: formRules.required('请填写名称'),
+    email: [formRules.required(), formRules.email()],
+  },
+})
+
+<QForm @submit="handleSubmit(onSave)">
+  <QField label="名称" required :error="errors.name">
+    <template #default="{ id, describedBy, invalid }">
+      <QInput :id="id" v-model="values.name" :aria-describedby="describedBy" :invalid="invalid" />
+    </template>
+  </QField>
+  <QField label="邮箱" required :error="errors.email">
+    <template #default="{ id, describedBy, invalid }">
+      <QInput :id="id" v-model="values.email" type="email" :aria-describedby="describedBy" :invalid="invalid" />
+    </template>
+  </QField>
+  <QButton type="submit" :loading="submitting">保存</QButton>
+</QForm>`
+
 export const combobox = `<QField label="负责人">
   <QCombobox
     v-model="assignee"
