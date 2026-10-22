@@ -1,0 +1,39 @@
+---
+description: 高质量 components / composables 封装标准
+globs: "src/{components,composables,views}/**/*.{vue,ts}"
+alwaysApply: false
+---
+
+# Components vs Composables
+
+| 放 components | 放 composables | 放 utils |
+|---|---|---|
+| 模板、样式、交互反馈 | 状态、请求、订阅、派生数据 | 无 Vue 依赖的纯函数 |
+
+抽离信号：同一 UI 出现 ≥2 次 → 组件；同一逻辑出现 ≥2 次或含副作用 → composable。
+
+## Component
+
+- 单一职责；一个组件一种视觉/交互角色（`QButton`、`PageHeader`）
+- Props 入、Emits 出；不偷偷改全局、不直连无关 store
+- 变体用显式 prop（`variant` / `size`），不用复制粘贴类名大段
+- 样式只用主题 token；动效遵循 `motion-animation` 规则
+- 尽量无副作用；要副作用就调用 composable
+
+## Composable（`useXxx`）
+
+- 入参明确、返回值类型化；返回只暴露外部需要的状态与方法
+- 副作用在 composable 内创建、在 `onScopeDispose` / `onUnmounted` 清理
+- 不返回未文档化的内部 `ref`；避免「上帝 composable」塞整页逻辑
+- 可测试：纯派生优先 `computed`；IO 可注入（传 `fetcher`）
+
+```ts
+// ✅
+export function useDisclosure(initial = false) {
+  const open = ref(initial)
+  const show = () => { open.value = true }
+  const hide = () => { open.value = false }
+  const toggle = () => { open.value = !open.value }
+  return { open: readonly(open), show, hide, toggle }
+}
+```

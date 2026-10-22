@@ -1,0 +1,30 @@
+---
+description: motion-v 动效规范（与 Notion 风格一致）
+globs: "**/*.{vue,ts}"
+alwaysApply: false
+---
+
+# Motion（motion-v）
+
+- 只使用 `motion-v`，不要引入 Framer Motion React 或其他动画库
+- 优先声明式：`initial` / `animate` / `whileHover` / `whileInView` / `exit`
+- 退出动画必须包在 `AnimatePresence` 内；`v-if` 在子节点上，子节点有稳定 `key`
+
+## 与 Notion Style 对齐
+
+- 过渡偏短：约 `duration: 0.15`–`0.25` 或轻 spring
+- 悬停/按下：优先背景色变化（`bg-hover` / `bg-active`），避免夸张 `scale`、上浮 `translate-y`、阴影跳变
+- 简单颜色 hover 可用 CSS；编排、滚动显现、布局共享再用 Motion
+
+```vue
+<!-- ✅ 克制 -->
+<motion.button
+  :whileHover="{ backgroundColor: 'rgb(var(--color-hover))' }"
+  :transition="{ duration: 0.15 }"
+/>
+
+<!-- ❌ 浮夸 -->
+<motion.button :whileHover="{ scale: 1.08, y: -4 }" />
+```
+
+细节见技能 `motion-vue`。

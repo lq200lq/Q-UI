@@ -1,0 +1,30 @@
+---
+description: Dev902 前端架构与迭代质量底线（全局）
+alwaysApply: true
+---
+
+# 前端架构
+
+栈：Vue 3 + TypeScript + Vite + Tailwind 3 + motion-v。视觉遵循 Notion Style（`.cursor/skills/notion-style`），动效遵循 Motion Vue（`.cursor/skills/motion-vue`）。
+
+## 目录约定（随迭代扩展，勿扁平堆在 `src/` 根）
+
+```
+src/
+  components/q/   # 设计系统（Q 前缀）
+  components/     # 业务组件
+  composables/    # useDisclosure、useClickOutside…
+  constants/      # OVERLAY_ROOT 等
+  views/ router/ themes/ types/ utils/
+  App.vue · main.ts · style.css
+example/          # 展示页 /example/*
+#overlay-root     # index.html 浮层 Teleport 目标
+```
+
+## 质量底线
+
+- 新功能优先抽组件 / composable，避免 `App.vue` 无限膨胀
+- 禁止引入与现有栈重复的库（如另一套动画库、另一套 CSS 框架），除非用户明确要求
+- 主题色与字体只改 `src/themes/*.css`；`tailwind.config.cjs` 只做变量映射
+- 提交前确保 `npm run build`（含 `vue-tsc`）可通过
+- 改动保持最小范围；不顺手大重构、不写无请求的文档

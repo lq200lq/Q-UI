@@ -1,0 +1,24 @@
+---
+description: 前端可访问性与交互基线
+globs: "**/*.vue"
+alwaysApply: false
+---
+
+# 可访问性与交互
+
+完整约定见 `docs/accessibility.md`。浮层统一 `Teleport` 到 `#overlay-root`。
+
+- 按钮用 `<button type="button">`（或显式 `submit`），不用可点击的 `<div>`
+- 图标按钮提供 `aria-label`；装饰图 `alt=""`，内容图有意义 `alt`
+- 交互态至少覆盖：默认 / hover / active / disabled；焦点可见（勿随意 `outline-none` 且无替代）
+- 动画尊重系统：长时或强动效考虑 `prefers-reduced-motion`（减弱或关闭）
+- 文案与控件保持文档工具气质：低噪声反馈，不堆叠弹跳徽章
+- 关闭浮层支持 `Escape`；开合优先用 `useDisclosure`
+
+```vue
+<!-- ✅ -->
+<button type="button" aria-label="关闭" class="...">…</button>
+
+<!-- ❌ -->
+<div class="cursor-pointer" @click="close">×</div>
+```

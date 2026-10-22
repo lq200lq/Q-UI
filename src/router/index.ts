@@ -1,0 +1,28 @@
+import { createRouter, createWebHistory } from 'vue-router'
+import HomePage from '../views/HomePage.vue'
+
+export const router = createRouter({
+  history: createWebHistory(),
+  routes: [
+    {
+      path: '/',
+      name: 'home',
+      component: HomePage,
+    },
+    {
+      path: '/example/icons',
+      name: 'example-icons',
+      component: () => import('../../example/icons/IconGalleryPage.vue'),
+    },
+    {
+      path: '/example/components',
+      name: 'example-components',
+      component: () => import('../../example/components/ComponentsGalleryPage.vue'),
+    },
+    {
+      path: '/example/layout',
+      name: 'example-layout',
+      component: () => import('../../example/layout/LayoutShellPage.vue'),
+    },
+  ],
+})

@@ -1,0 +1,40 @@
+---
+description: Vue 3 SFC 写法与组件边界
+globs: "**/*.vue"
+alwaysApply: false
+---
+
+# Vue SFC
+
+- 一律 `<script setup lang="ts">`，不用 Options API
+- 组件名与文件名 PascalCase（如 `TaskCard.vue`）
+- Props / Emits 用类型声明，禁止无类型的运行时 `props: { ... }` 对象（除非必要兼容）
+
+```vue
+<script setup lang="ts">
+const props = defineProps<{
+  title: string
+  active?: boolean
+}>()
+
+const emit = defineEmits<{
+  select: [id: string]
+}>()
+</script>
+```
+
+## 边界
+
+- 展示逻辑进组件；可复用状态与副作用进 `composables/`
+- 模板保持可读：复杂 `v-if` / 计算抽到 `computed` 或子组件
+- 列表渲染必须稳定 `:key`（用业务 id，不用 index）
+- 不在模板里写重逻辑或长链式表达式
+
+## 反例
+
+```vue
+<!-- ❌ -->
+<script>
+export default { data() { return { open: false } } }
+</script>
+```

@@ -1,0 +1,30 @@
+---
+description: Tailwind 与主题 token 使用规范
+globs: "**/*.{vue,css}"
+alwaysApply: false
+---
+
+# Tailwind & 主题
+
+主题源：`src/themes/default.css`（CSS 变量）。Tailwind 在 `tailwind.config.cjs` 映射为 utility。
+
+## 必须
+
+- 颜色 / 字体 / 圆角 / 阴影优先用 token：`text-primary`、`bg-page`、`bg-surface`、`bg-hover`、`border-border`、`bg-btn`、`font-heading` 等
+- 图标一律 `QIcon`；尺寸用 `sm|md|lg|xl`（`--icon-size-*`），描边用 `--icon-stroke`，颜色用 `text-*` / `currentColor`
+- 新主题色先加到 `src/themes/*.css`，再（如需）补 `tailwind.config.cjs` 映射
+- 主题文件在 `main.ts` 用 `import './themes/xxx.css'` 引入；**不要**只靠 `style.css` 里的 `@import`（易被 PostCSS 丢掉）
+
+## 禁止
+
+- 在组件里散落硬编码品牌色（如 `#2383e2`、`#f7f6f3`），除非是一次性实验且马上收进主题
+- Notion 风格下：`rounded-2xl` / `rounded-full`（头像除外）/ `shadow-2xl` / `bg-gradient-*`
+- 用 `style=""` 写本可用 utility 表达的布局与颜色
+
+```vue
+<!-- ❌ -->
+<div class="bg-[#f7f6f3] text-[#37352f]">
+
+<!-- ✅ -->
+<div class="bg-page text-primary">
+```

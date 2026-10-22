@@ -1,0 +1,24 @@
+---
+description: TypeScript 严格约定（.ts / .vue）
+globs: "**/*.{ts,vue}"
+alwaysApply: false
+---
+
+# TypeScript
+
+- 优先推断；公共 API（props、composables 返回值、工具函数）显式标注
+- 禁止随意 `any`；确需逃逸用 `unknown` + 收窄
+- 共享类型放 `src/types/`，不要在多个 SFC 里复制接口
+- 使用 `import type` 导入仅类型符号
+
+```ts
+// ✅
+import type { Task } from '@/types/task'
+export function useTasks(): { items: Ref<Task[]> } { /* ... */ }
+
+// ❌
+export function useTasks(): any { /* ... */ }
+```
+
+- 异步失败要处理或向上抛出带上下文的错误，禁止空 `catch`
+- 不新增 `@ts-ignore`；必要时用带说明的 `@ts-expect-error`
