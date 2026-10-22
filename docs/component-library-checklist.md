@@ -142,7 +142,7 @@
 - [x] `useClickOutside` — `src/composables/useClickOutside.ts`
 - [x] `useHotkey` — `src/composables/useHotkey.ts`
 - [x] `useToast` / `toast()` — `src/composables/useToast.ts`
-- [ ] `useMediaQuery` / `usePrefersReducedMotion`
+- [x] `useMediaQuery` / `usePrefersReducedMotion` → `src/composables/useMediaQuery.ts`
 - [ ] `useListKeyboard` — 列表方向键与 Enter
 
 ### 基础设施
