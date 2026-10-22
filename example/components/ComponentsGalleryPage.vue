@@ -50,6 +50,7 @@ import {
   type QBlockToolbarItem,
   QCover,
   QPageIcon,
+  QCalloutBlock,
   QIcon,
   QIconButton,
   QInput,
@@ -347,6 +348,7 @@ const navItems = [
   { id: 'q-slash-menu', label: 'QSlashMenu' },
   { id: 'q-block-toolbar', label: 'QBlockToolbar' },
   { id: 'q-cover', label: 'QCover · QPageIcon' },
+  { id: 'q-callout-block', label: 'QCalloutBlock' },
   { id: 'q-textarea', label: 'QTextarea' },
   { id: 'q-select', label: 'QSelect' },
   { id: 'q-combobox', label: 'QCombobox' },
@@ -1056,6 +1058,23 @@ onUnmounted(() => {
             "
           />
         </div>
+      </div>
+    </ExampleBlock>
+
+    <ExampleBlock
+      id="q-callout-block"
+      title="QCalloutBlock"
+      description="文档块式 callout；emoji 可点换"
+      :code="snippets.calloutBlock"
+    >
+      <div class="w-full max-w-lg">
+        <QCalloutBlock
+          :emoji="pageEmoji === '📄' ? '💡' : '✨'"
+          title="提示"
+          @icon-click="pageEmoji = pageEmoji === '📄' ? '✨' : '📄'"
+        >
+          文档块式 callout，点击左侧 emoji 可更换。
+        </QCalloutBlock>
       </div>
     </ExampleBlock>
 

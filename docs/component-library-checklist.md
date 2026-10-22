@@ -112,7 +112,7 @@
 
 ### 内容块
 
-- [ ] `QCalloutBlock`（已有 Alert 时可复用变体）
+- [x] `QCalloutBlock`（复用 QCallout + 可换 emoji）
 - [ ] `QToggle` / 折叠块
 - [ ] `QQuote`
 - [ ] `QCodeBlock` + 复制按钮

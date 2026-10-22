@@ -167,6 +167,10 @@ export const cover = `<QCover
 />
 <QPageIcon emoji="📄" class="-mt-8 ml-4" />`
 
+export const calloutBlock = `<QCalloutBlock emoji="💡" title="提示">
+  文档块式 callout，可更换 emoji。
+</QCalloutBlock>`
+
 export const mentionInput = `<QMentionInput
   v-model="comment"
   :options="[
