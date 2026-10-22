@@ -33,7 +33,30 @@ import {
   QTree,
   type QTreeNode,
 } from '../../src/components/q'
-import { toast } from '../../src/composables'
+import {
+  toast,
+  usePrefersReducedMotion,
+  useTheme,
+} from '../../src/composables'
+
+const { theme, toggleTheme } = useTheme()
+const prefersReducedMotion = usePrefersReducedMotion()
+const themeLabel = computed(() =>
+  theme.value === 'dark' ? '切换为亮色主题' : '切换为暗色主题',
+)
+const pageEnter = computed(() =>
+  prefersReducedMotion.value
+    ? {
+        initial: { opacity: 1, y: 0 },
+        animate: { opacity: 1, y: 0 },
+        transition: { duration: 0 },
+      }
+    : {
+        initial: { opacity: 0, y: 6 },
+        animate: { opacity: 1, y: 0 },
+        transition: { duration: 0.2 },
+      },
+)
 
 const collapsed = ref(false)
 const pageTitle = ref('产品规格')
@@ -221,6 +244,15 @@ function cycleEmoji() {
           <QBreadcrumb :items="crumbs" />
         </template>
         <template #right>
+          <QTooltip :content="themeLabel">
+            <QIconButton
+              :label="themeLabel"
+              :name="theme === 'dark' ? 'sun' : 'moon'"
+              variant="ghost"
+              size="sm"
+              @click="toggleTheme"
+            />
+          </QTooltip>
           <QTooltip content="分享">
             <QButton size="sm" variant="outline" icon="link" @click="toast('已复制链接')">
               分享
@@ -241,9 +273,9 @@ function cycleEmoji() {
 
       <motion.div
         class="relative mx-auto max-w-3xl px-4 pb-16 md:px-8"
-        :initial="{ opacity: 0, y: 6 }"
-        :animate="{ opacity: 1, y: 0 }"
-        :transition="{ duration: 0.2 }"
+        :initial="pageEnter.initial"
+        :animate="pageEnter.animate"
+        :transition="pageEnter.transition"
       >
         <div class="flex items-end gap-2">
           <QPageIcon

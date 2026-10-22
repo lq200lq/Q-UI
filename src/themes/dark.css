@@ -1,0 +1,38 @@
+/**
+ * Dark theme — Notion Style
+ * Activate with <html data-theme="dark"> (see useTheme).
+ */
+
+[data-theme='dark'] {
+  color-scheme: dark;
+
+  --color-primary: 235 235 235;
+  --color-secondary: 37 37 37;
+  --color-accent-1: 46 170 220;
+  --color-accent-2: 235 87 87;
+  --color-accent-3: 75 192 168;
+  --color-accent-4: 167 139 250;
+
+  --color-page: 25 25 25;
+  --color-surface: 32 32 32;
+  --color-hover: 47 47 47;
+  --color-active: 55 55 55;
+  --color-border: 55 55 55;
+  --color-btn: 35 131 226;
+  --color-btn-hover: 55 148 235;
+  --color-btn-active: 27 110 194;
+  --color-on-btn: 255 255 255;
+  --color-danger: 235 87 87;
+  --color-danger-hover: 248 113 113;
+  --color-danger-active: 220 70 70;
+  --color-on-danger: 255 255 255;
+
+  --bg-page-pattern: radial-gradient(circle, #ffffff18 1px, transparent 1px);
+  --bg-page-size: 20px 20px;
+
+  --icon-color: rgb(var(--color-primary));
+
+  --shadow-brutal: 4px 4px 0px 0px rgba(0, 0, 0, 0.65);
+  --shadow-brutal-md: 6px 6px 0px 0px rgba(0, 0, 0, 0.65);
+  --shadow-brutal-lg: 8px 8px 0px 0px rgba(0, 0, 0, 0.65);
+}

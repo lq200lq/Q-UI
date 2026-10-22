@@ -148,14 +148,18 @@
 ### 基础设施
 
 - [x] 主题 tokens 文档（对应 `src/themes/`）→ [`theme-tokens.md`](./theme-tokens.md)
+- [x] 亮 / 暗主题 — `default.css` · `dark.css` + `useTheme` / `applyThemeEarly`
 - [x] `QIcon` — 见独立文档 [`q-icon.md`](./q-icon.md)（已实现）
 - [x] 门户挂载点 — `index.html` → `#overlay-root`（`src/constants/overlay.ts`）
 - [x] 无障碍约定 — [`accessibility.md`](./accessibility.md)
 - [x] Story / Playground — `example/` 路由（`/example/page` 页面示例 · `/example/layout` · `/example/components` 索引 · `core` / `forms` / `blocks` / `board` · `/example/icons`）
+- [x] 设计系统导出索引 — [`src/components/q/README.md`](../src/components/q/README.md)
 
 ---
 
 ## 建议落地顺序（精简版）
+
+> 清单项已全部落地；下列顺序仅作历史参考。后续优先做产品页交互与工程化。
 
 1. **QButton · QInput · QField · QCard · QModal · QToast · QTooltip**
 2. **QDropdownMenu · QTabs · QSidebar · QTable · QEmpty · QSkeleton**
@@ -172,11 +176,11 @@
 
 ---
 
-## 进度统计（可选自填）
+## 进度统计
 
-| 分组 | 合计约 | 已完成 |
-|------|--------|--------|
-| P0 基础原语 | ~30 | 0 |
-| P1 数据与导航 | ~25 | 0 |
-| P2 文档专项 | ~20 | 0 |
-| Composables / 基建 | ~12 | 0 |
+| 分组 | 合计 | 已完成 |
+|------|------|--------|
+| P0 基础原语 | 31 | 31 |
+| P1 数据与导航 | 26 | 26 |
+| P2 文档专项 | 20 | 20 |
+| Composables / 基建 | 16 | 16 |

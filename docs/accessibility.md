@@ -17,7 +17,7 @@
 |------|------|
 | 关闭浮层 | `Escape` |
 | 激活按钮 / 菜单项 | `Enter` / `Space` |
-| 菜单 / 列表 | `ArrowUp` / `ArrowDown`（后续 `useListKeyboard`） |
+| 菜单 / 列表 | `ArrowUp` / `ArrowDown`（`useListKeyboard`） |
 | 对话框默认钮 | 可选 `Enter` 提交（需明确文档） |
 
 ## ARIA 速查
@@ -35,8 +35,13 @@
 
 ## 动效
 
-- 尊重 `prefers-reduced-motion`：强动效减弱或关闭
+- 尊重 `prefers-reduced-motion`：强动效减弱或关闭（`usePrefersReducedMotion()`；示例页入场动画已跟随）
 - 交互反馈优先颜色变化（`bg-hover` / `bg-active`），避免位移 / 缩放
+
+## 主题
+
+- 亮 / 暗切换不改变语义 token 名称；只换 `data-theme`
+- 切换控件须有可读 `aria-label`（如「切换为暗色主题」）
 
 ## 检查清单（PR）
 
@@ -45,3 +50,5 @@
 - [ ] 图标按钮有 `aria-label`
 - [ ] 错误信息与控件关联
 - [ ] 浮层走 `#overlay-root`
+- [ ] 强动效在 `prefers-reduced-motion` 下减弱或关闭
+- [ ] 主题切换后对比度仍可读（抽查正文 / 边框 / 主按钮）

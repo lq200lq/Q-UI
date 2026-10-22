@@ -6,6 +6,8 @@
 
 :root,
 [data-theme='default'] {
+  color-scheme: light;
+
   /* Colors (RGB channels for Tailwind alpha support) */
   --color-primary: 55 53 47; /* #37352f */
   --color-secondary: 255 255 255; /* #ffffff */

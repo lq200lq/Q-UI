@@ -32,3 +32,8 @@ export {
   useListKeyboard,
   type UseListKeyboardOptions,
 } from './useListKeyboard'
+export {
+  useTheme,
+  applyThemeEarly,
+  type ThemeId,
+} from './useTheme'

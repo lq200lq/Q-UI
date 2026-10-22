@@ -293,6 +293,23 @@ export const icons = {
     { tag: 'circle', cx: 12, cy: 12, r: 10 },
     { tag: 'polyline', points: '12 6 12 12 16 14' },
   ],
+  sun: [
+    { tag: 'circle', cx: 12, cy: 12, r: 4 },
+    { tag: 'path', d: 'M12 2v2' },
+    { tag: 'path', d: 'M12 20v2' },
+    { tag: 'path', d: 'm4.93 4.93 1.41 1.41' },
+    { tag: 'path', d: 'm17.66 17.66 1.41 1.41' },
+    { tag: 'path', d: 'M2 12h2' },
+    { tag: 'path', d: 'M20 12h2' },
+    { tag: 'path', d: 'm6.34 17.66-1.41 1.41' },
+    { tag: 'path', d: 'm19.07 4.93-1.41 1.41' },
+  ],
+  moon: [
+    {
+      tag: 'path',
+      d: 'M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z',
+    },
+  ],
 } as const satisfies Record<string, IconNode[]>
 
 export type IconName = keyof typeof icons

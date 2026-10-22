@@ -1,15 +1,53 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import { RouterLink } from 'vue-router'
 import { motion } from 'motion-v'
-import { QIcon } from '../components/q'
+import { QIcon, QIconButton, QTooltip } from '../components/q'
+import {
+  usePrefersReducedMotion,
+  useTheme,
+} from '../composables'
+
+const { theme, toggleTheme } = useTheme()
+const prefersReducedMotion = usePrefersReducedMotion()
+
+const enter = computed(() =>
+  prefersReducedMotion.value
+    ? {
+        initial: { opacity: 1, y: 0 },
+        animate: { opacity: 1, y: 0 },
+        transition: { duration: 0 },
+      }
+    : {
+        initial: { opacity: 0, y: 8 },
+        animate: { opacity: 1, y: 0 },
+        transition: { duration: 0.2 },
+      },
+)
+
+const themeLabel = computed(() =>
+  theme.value === 'dark' ? '切换为亮色主题' : '切换为暗色主题',
+)
 </script>
 
 <template>
-  <div class="mx-auto max-w-2xl px-4 py-16 md:px-6 md:py-24">
+  <div class="relative mx-auto max-w-2xl px-4 py-16 md:px-6 md:py-24">
+    <div class="absolute right-4 top-4 md:right-6 md:top-6">
+      <QTooltip :content="themeLabel">
+        <QIconButton
+          :label="themeLabel"
+          :name="theme === 'dark' ? 'sun' : 'moon'"
+          variant="ghost"
+          size="sm"
+          @click="toggleTheme"
+        />
+      </QTooltip>
+    </div>
+
     <motion.header
-      :initial="{ opacity: 0, y: 8 }"
-      :animate="{ opacity: 1, y: 0 }"
-      :transition="{ duration: 0.2 }"
+      :initial="enter.initial"
+      :animate="enter.animate"
+      :transition="enter.transition"
       class="mb-10"
     >
       <p class="mb-2 text-sm text-primary/60">Dev902</p>
@@ -22,9 +60,13 @@ import { QIcon } from '../components/q'
     </motion.header>
 
     <motion.section
-      :initial="{ opacity: 0, y: 8 }"
-      :animate="{ opacity: 1, y: 0 }"
-      :transition="{ duration: 0.2, delay: 0.05 }"
+      :initial="enter.initial"
+      :animate="enter.animate"
+      :transition="
+        prefersReducedMotion
+          ? enter.transition
+          : { duration: 0.2, delay: 0.05 }
+      "
       class="rounded-lg border border-border bg-surface p-4 shadow-sm md:p-6"
     >
       <h2 class="mb-3 font-heading text-lg font-semibold text-primary">
@@ -116,7 +158,8 @@ import { QIcon } from '../components/q'
       <p class="mt-4 border-t border-border pt-4 text-sm text-primary/60">
         示例源码在
         <code class="font-mono text-accent-1">example/</code>
-        目录。
+        目录。导出索引见
+        <code class="font-mono text-accent-1">src/components/q/README.md</code>。
       </p>
     </motion.section>
   </div>

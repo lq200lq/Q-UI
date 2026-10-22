@@ -1,8 +1,8 @@
 # 主题 Tokens
 
-源文件：`src/themes/*.css`（默认 `default.css`）。`tailwind.config.cjs` 只做 CSS 变量 → Tailwind 工具类映射，**不要**在 config 里写死色值。
+源文件：`src/themes/*.css`（`default.css` 亮色 · `dark.css` 暗色）。`tailwind.config.cjs` 只做 CSS 变量 → Tailwind 工具类映射，**不要**在 config 里写死色值。
 
-切换主题：加载另一个 `src/themes/<name>.css`，或在 `<html>` 上设置 `data-theme="…"`（需对应选择器）。
+切换主题：在 `<html>` 上设置 `data-theme="default" | "dark"`。运行时用 `useTheme()` / `applyThemeEarly()`（`src/composables/useTheme.ts`），会读写 `localStorage` 键 `dev902-theme`，无记录时跟随 `prefers-color-scheme`。
 
 ## 颜色（RGB 通道）
 
