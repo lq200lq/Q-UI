@@ -38,6 +38,8 @@ import {
   type QUploadFile,
   QSlider,
   QColorSwatch,
+  QMentionInput,
+  type QMentionOption,
   QIcon,
   QIconButton,
   QInput,
@@ -145,6 +147,13 @@ const startTime = ref<string | null>('09:30')
 const uploadFiles = ref<QUploadFile[]>([])
 const volume = ref(42)
 const tagColor = ref<string | null>('#2383e2')
+const mentionText = ref('请 @')
+const mentionOptions: QMentionOption[] = [
+  { id: 'ada', label: 'Ada Lovelace', description: '工程' },
+  { id: 'alan', label: 'Alan Turing', description: '研究' },
+  { id: 'grace', label: 'Grace Hopper', description: '编译器' },
+  { id: 'linus', label: 'Linus Torvalds', description: '内核' },
+]
 
 const page = ref(1)
 const step = ref('team')
@@ -271,6 +280,7 @@ const navItems = [
   { id: 'q-file-upload', label: 'QFileUpload' },
   { id: 'q-slider', label: 'QSlider' },
   { id: 'q-color-swatch', label: 'QColorSwatch' },
+  { id: 'q-mention-input', label: 'QMentionInput' },
   { id: 'q-textarea', label: 'QTextarea' },
   { id: 'q-select', label: 'QSelect' },
   { id: 'q-combobox', label: 'QCombobox' },
@@ -838,6 +848,22 @@ onUnmounted(() => {
         >
           标签预览
         </QTag>
+      </div>
+    </ExampleBlock>
+
+    <ExampleBlock
+      id="q-mention-input"
+      title="QMentionInput"
+      description="输入 @ 弹出提及列表；方向键 / Enter 选择"
+      :code="snippets.mentionInput"
+    >
+      <div class="w-full max-w-md">
+        <QField label="评论" description="试用 @ada 触发提及">
+          <QMentionInput
+            v-model="mentionText"
+            :options="mentionOptions"
+          />
+        </QField>
       </div>
     </ExampleBlock>
 

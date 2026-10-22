@@ -88,7 +88,7 @@
 - [x] `QFileUpload` / `QDropzone`
 - [x] `QSlider`
 - [x] `QColorSwatch` / 轻量取色（主题/标签色）
-- [ ] `QMentionInput`（`@` 提及，文档产品 P1–P2）
+- [x] `QMentionInput`（`@` 提及）
 
 ### 覆盖层进阶
 

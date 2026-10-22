@@ -136,6 +136,14 @@ export const slider = `<QSlider v-model="volume" label="音量" show-value :max=
 
 export const colorSwatch = `<QColorSwatch v-model="tagColor" />`
 
+export const mentionInput = `<QMentionInput
+  v-model="comment"
+  :options="[
+    { id: 'ada', label: 'Ada Lovelace', description: '工程' },
+    { id: 'alan', label: 'Alan Turing', description: '研究' },
+  ]"
+/>`
+
 export const form = `const { values, errors, submitting, handleSubmit } = useForm({
   initialValues: { name: '', email: '' },
   rules: {
