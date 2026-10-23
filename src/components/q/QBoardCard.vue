@@ -17,7 +17,7 @@ const emit = defineEmits<{
 
 <template>
   <div
-    class="q-board-card rounded-md border border-border bg-surface p-2.5 text-left transition-colors duration-150 hover:bg-hover"
+    class="q-board-card rounded-md bg-surface p-2.5 text-left shadow-sm transition-colors duration-150 hover:bg-hover"
     :class="draggable ? 'cursor-grab active:cursor-grabbing' : 'cursor-pointer'"
     role="button"
     tabindex="0"

@@ -40,11 +40,22 @@ import {
   useTheme,
 } from '../../src/composables'
 
-const { theme, toggleTheme } = useTheme()
+const { theme, themeFamily, setThemeFamily, toggleTheme } = useTheme()
 const prefersReducedMotion = usePrefersReducedMotion()
 const themeLabel = computed(() =>
   theme.value === 'dark' ? '切换为亮色主题' : '切换为暗色主题',
 )
+const isModern = computed(() => theme.value === 'modern')
+
+function familyBtnClass(family: 'notion' | 'modern') {
+  const active = themeFamily.value === family
+  return [
+    'rounded-md px-2 py-1 text-control-sm font-medium transition-colors duration-150',
+    active
+      ? 'bg-active text-primary'
+      : 'text-primary/60 hover:bg-hover hover:text-primary',
+  ]
+}
 const pageEnter = computed(() =>
   prefersReducedMotion.value
     ? {
@@ -242,7 +253,32 @@ function cycleEmoji() {
           <QBreadcrumb :items="crumbs" />
         </template>
         <template #right>
-          <QTooltip :content="themeLabel">
+          <div
+            class="flex items-center gap-0.5 rounded-md border border-border bg-surface p-0.5"
+            role="group"
+            aria-label="主题风格"
+          >
+            <button
+              type="button"
+              :class="familyBtnClass('notion')"
+              :aria-pressed="themeFamily === 'notion'"
+              @click="setThemeFamily('notion')"
+            >
+              Notion
+            </button>
+            <button
+              type="button"
+              :class="familyBtnClass('modern')"
+              :aria-pressed="themeFamily === 'modern'"
+              @click="setThemeFamily('modern')"
+            >
+              Modern
+            </button>
+          </div>
+          <QTooltip
+            v-if="!isModern"
+            :content="themeLabel"
+          >
             <QIconButton
               :label="themeLabel"
               :name="theme === 'dark' ? 'sun' : 'moon'"

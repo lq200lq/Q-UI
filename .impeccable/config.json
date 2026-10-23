@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "src/components/q/QQuote.vue"
+        ],
+        "createdAt": "2026-10-22T15:47:57.581Z",
+        "reason": "Notion quote block domain pattern: thin left rule is the product convention for QQuote"
+      }
+    ]
+  }
+}

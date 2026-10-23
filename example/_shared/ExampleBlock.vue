@@ -61,7 +61,7 @@ function onToggleCode() {
       </p>
     </header>
 
-    <div class="overflow-hidden rounded-lg border border-border bg-surface shadow-sm">
+    <div class="overflow-hidden rounded-lg bg-surface shadow-sm">
       <!-- Preview -->
       <div class="p-4 md:p-6">
         <slot />

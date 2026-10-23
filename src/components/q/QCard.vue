@@ -3,7 +3,7 @@ import { computed, useSlots } from 'vue'
 
 const props = withDefaults(
   defineProps<{
-    variant?: 'default' | 'flat' | 'elevated'
+    variant?: 'default' | 'flat' | 'elevated' | 'outlined'
     padding?: 'none' | 'sm' | 'md'
   }>(),
   {
@@ -37,10 +37,12 @@ const chromeClass = computed(() => {
 })
 
 const rootClass = computed(() => {
+  /* Content surfaces: tonal hierarchy (page → surface). Keep hairline only on `outlined`. */
   const variants = {
-    default: 'border border-border bg-surface shadow-sm',
-    flat: 'border border-border bg-surface',
-    elevated: 'border border-border bg-surface shadow-md',
+    default: 'bg-surface shadow-sm',
+    flat: 'bg-surface',
+    elevated: 'bg-surface shadow-md',
+    outlined: 'border border-border bg-surface',
   } as const
 
   const hasChrome = Boolean(slots.header || slots.footer)

@@ -36,4 +36,5 @@ export {
   useTheme,
   applyThemeEarly,
   type ThemeId,
+  type ThemeFamily,
 } from './useTheme'

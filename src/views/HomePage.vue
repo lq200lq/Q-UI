@@ -6,9 +6,10 @@ import { QIcon, QIconButton, QLogo, QTooltip } from '../components/q'
 import {
   usePrefersReducedMotion,
   useTheme,
+  type ThemeFamily,
 } from '../composables'
 
-const { theme, toggleTheme } = useTheme()
+const { theme, themeFamily, setThemeFamily, toggleTheme } = useTheme()
 const prefersReducedMotion = usePrefersReducedMotion()
 
 const enter = computed(() =>
@@ -28,12 +29,55 @@ const enter = computed(() =>
 const themeLabel = computed(() =>
   theme.value === 'dark' ? '切换为亮色主题' : '切换为暗色主题',
 )
+
+const isModern = computed(() => theme.value === 'modern')
+
+function selectFamily(family: ThemeFamily) {
+  setThemeFamily(family)
+}
+
+function familyBtnClass(family: ThemeFamily) {
+  const active = themeFamily.value === family
+  return [
+    'rounded-md px-2 py-1 text-control-sm font-medium transition-colors duration-150',
+    active
+      ? 'bg-active text-primary'
+      : 'text-primary/60 hover:bg-hover hover:text-primary',
+  ]
+}
 </script>
 
 <template>
   <div class="relative mx-auto max-w-2xl px-4 py-16 md:px-6 md:py-24">
-    <div class="absolute right-4 top-4 md:right-6 md:top-6">
-      <QTooltip :content="themeLabel">
+    <div
+      class="absolute right-4 top-4 flex items-center gap-2 md:right-6 md:top-6"
+    >
+      <div
+        class="flex items-center gap-0.5 rounded-md border border-border bg-surface p-0.5"
+        role="group"
+        aria-label="主题风格"
+      >
+        <button
+          type="button"
+          :class="familyBtnClass('notion')"
+          :aria-pressed="themeFamily === 'notion'"
+          @click="selectFamily('notion')"
+        >
+          Notion
+        </button>
+        <button
+          type="button"
+          :class="familyBtnClass('modern')"
+          :aria-pressed="themeFamily === 'modern'"
+          @click="selectFamily('modern')"
+        >
+          Modern
+        </button>
+      </div>
+      <QTooltip
+        v-if="!isModern"
+        :content="themeLabel"
+      >
         <QIconButton
           :label="themeLabel"
           :name="theme === 'dark' ? 'sun' : 'moon'"
@@ -70,7 +114,7 @@ const themeLabel = computed(() =>
           ? enter.transition
           : { duration: 0.2, delay: 0.05 }
       "
-      class="rounded-lg border border-border bg-surface p-4 shadow-sm md:p-6"
+      class="rounded-lg bg-surface p-4 shadow-sm md:p-6"
     >
       <h2 class="mb-3 font-heading text-lg font-semibold text-primary">
         Examples

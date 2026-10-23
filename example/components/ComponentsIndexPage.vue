@@ -31,7 +31,7 @@ import { componentGalleries } from '../_shared/galleryNav'
       <li v-for="g in componentGalleries" :key="g.to">
         <RouterLink
           :to="g.to"
-          class="flex items-start gap-3 rounded-md border border-border bg-surface px-4 py-3 transition-colors duration-150 hover:bg-hover"
+          class="flex items-start gap-3 rounded-md bg-surface px-4 py-3 shadow-sm transition-colors duration-150 hover:bg-hover"
         >
           <div class="min-w-0 flex-1">
             <p class="text-sm font-medium text-primary">{{ g.label }}</p>

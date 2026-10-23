@@ -535,15 +535,21 @@ function onContextSelect(item: QDropdownItem) {
     <ExampleBlock
       id="q-card"
       title="QCard"
-      description="default / flat / elevated；可选 header / footer 插槽"
+      description="default / flat / elevated 靠色阶与阴影分层；outlined 保留浅边框；header / footer 仍用分割线"
       :code="snippets.card"
     >
       <div class="grid gap-4 md:grid-cols-2">
         <QCard variant="default" padding="sm">
-          <p class="text-sm text-primary/80">default · shadow-sm</p>
+          <p class="text-sm text-primary/80">default · 无边框 · shadow-sm</p>
         </QCard>
         <QCard variant="flat" padding="sm">
-          <p class="text-sm text-primary/80">flat · 无阴影</p>
+          <p class="text-sm text-primary/80">flat · 仅色阶</p>
+        </QCard>
+        <QCard variant="outlined" padding="sm">
+          <p class="text-sm text-primary/80">outlined · 浅边框</p>
+        </QCard>
+        <QCard variant="elevated" padding="sm">
+          <p class="text-sm text-primary/80">elevated · shadow-md</p>
         </QCard>
         <QCard variant="elevated" class="md:col-span-2">
           <template #header>
@@ -553,7 +559,7 @@ function onContextSelect(item: QDropdownItem) {
             </div>
           </template>
           <p class="text-sm text-primary/80">
-            内容区使用主题 padding；分割线为
+            内容面无装饰边；页眉/页脚分割线保留
             <code class="font-mono text-xs text-accent-1">border-border</code>。
           </p>
           <template #footer>

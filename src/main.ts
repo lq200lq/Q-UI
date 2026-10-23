@@ -1,6 +1,7 @@
 import { createApp } from 'vue'
 import './themes/default.css'
 import './themes/dark.css'
+import './themes/modern.css'
 import './style.css'
 import App from './App.vue'
 import { router } from './router'
