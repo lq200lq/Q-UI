@@ -76,3 +76,15 @@ import { QButton, QAppShell, type QTabItem } from '@/components/q'
 | 无障碍 | [`docs/accessibility.md`](../../../docs/accessibility.md) |
 | 图标 | [`docs/q-icon.md`](../../../docs/q-icon.md) |
 | 示例 | `/example/page` · `/example/layout` · `/example/components/*` |
+
+## 品牌标志
+
+`QLogo` 是 Q-UI 的品牌标志：圆角界面框构成 Q 的主体，右下角尾笔呼应界面中的光标与编辑动作。使用 `currentColor` 跟随主题，默认尺寸 32px，可通过 class 设置尺寸。
+
+```vue
+<QLogo />
+<!-- 与 Q-UI 文字并排时，隐藏重复的读屏信息 -->
+<QLogo class="h-7 w-7" decorative />
+```
+
+独立矢量文件：`public/q-ui-logo.svg`；浏览器图标：`public/favicon.svg`。

@@ -1103,7 +1103,7 @@ function onContextSelect(item: QDropdownItem) {
         />
         <QDescriptionList
           :items="[
-            { term: '工作区', description: 'Dev902' },
+            { term: '工作区', description: 'Q-UI' },
             { term: '计划', description: 'Pro' },
           ]"
         />

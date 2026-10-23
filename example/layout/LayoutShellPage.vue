@@ -22,6 +22,7 @@ import {
   QKbd,
   QList,
   QListItem,
+  QLogo,
   QNavItem,
   QPagination,
   QPopover,
@@ -423,16 +424,13 @@ function onCommandSelect(item: QCommandItem) {
         <template #brand="{ collapsed: c }">
           <RouterLink
             to="/"
+            aria-label="Q-UI 首页"
             class="flex min-w-0 items-center gap-2 rounded-md px-1 py-1 text-primary transition-colors duration-150 hover:bg-hover"
             :class="c ? 'justify-center' : undefined"
           >
-            <span
-              class="flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-btn text-xs font-semibold text-on-btn"
-            >
-              Q
-            </span>
+            <QLogo class="h-7 w-7" decorative />
             <span v-if="!c" class="truncate font-heading text-sm font-semibold">
-              Dev902
+              Q-UI
             </span>
           </RouterLink>
         </template>

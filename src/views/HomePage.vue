@@ -2,7 +2,7 @@
 import { computed } from 'vue'
 import { RouterLink } from 'vue-router'
 import { motion } from 'motion-v'
-import { QIcon, QIconButton, QTooltip } from '../components/q'
+import { QIcon, QIconButton, QLogo, QTooltip } from '../components/q'
 import {
   usePrefersReducedMotion,
   useTheme,
@@ -50,7 +50,10 @@ const themeLabel = computed(() =>
       :transition="enter.transition"
       class="mb-10"
     >
-      <p class="mb-2 text-sm text-primary/60">Dev902</p>
+      <div class="mb-5 flex items-center gap-2.5 text-primary">
+        <QLogo class="h-10 w-10" decorative />
+        <span class="font-heading text-2xl font-semibold tracking-tight">Q-UI</span>
+      </div>
       <h1 class="font-heading text-3xl font-semibold text-primary md:text-4xl">
         Notion Style + Motion
       </h1>

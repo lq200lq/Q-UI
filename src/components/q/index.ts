@@ -1,3 +1,4 @@
+export { default as QLogo } from './QLogo.vue'
 export { default as QIcon } from './QIcon.vue'
 export { default as QText } from './QText.vue'
 export { default as QHeading } from './QHeading.vue'

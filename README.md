@@ -1,4 +1,4 @@
-# Dev902
+# Q-UI
 
 Vue 3 + Vite + Tailwind CSS（Notion Style）+ motion-v 脚手架。
 
